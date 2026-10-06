@@ -120,8 +120,8 @@ theme:
     text: Roboto
     code: Roboto Mono
 
-#dev_addr: localhost:9000
-dev_addr: 192.168.115.156:9000
+dev_addr: localhost:9000
+#dev_addr: 192.168.115.156:9000
 
 extra_css:
     - css/extra.css
