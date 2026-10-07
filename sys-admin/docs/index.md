@@ -30,7 +30,7 @@ Refer to the following sections for installation,
 Refer to the following sections for maintenance,
 
 - [Upgrade TACTIC](upgrade-tactic.md)
-- [Scalability](configuration-examples.md)
+- [Scalability](deploy-tactic-scalability-configuration-examples.md)
 - [Troubleshooting](troubleshooting-tactic.md)
 - [Maintenance](backup-and-restore-server.md)
 

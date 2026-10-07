@@ -1,0 +1,22 @@
+site_name: TACTIC Docs
+site_url: https://magic-lantern-workbench.github.io/TACTIC-Docs/
+
+theme:
+  name: material
+  favicon: images/favicon.ico
+  logo: images/favicon.ico
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+nav:
+  - Home: 'index.md'
+  - Quick Start: 'https://magic-lantern-workbench.github.io/TACTIC-Docs/quick-start/'
+  - Setup: 'https://magic-lantern-workbench.github.io/TACTIC-Docs/setup/'
+  - System Administration: 'https://magic-lantern-workbench.github.io/TACTIC-Docs/sys-admin/'
+  - Developer: 'https://magic-lantern-workbench.github.io/TACTIC-Docs/developer/'
+
+dev_addr: localhost:9000
+
+extra_css:
+    - css/extra.css
