@@ -1,5 +1,5 @@
 site_name: TACTIC Developer Docs
-site_url: http://community.southpawtech.com
+site_url: https://magic-lantern-workbench.github.io/TACTIC-Docs/developer/
 
 nav:
     - Introduction: './index.md'

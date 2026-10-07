@@ -1,0 +1,5616 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://magic-lantern-workbench.github.io/TACTIC-Docs/developer/client-api-checkin/">
+      
+      
+        <link rel="prev" href="../client-api-basic/">
+      
+      
+        <link rel="next" href="../client-api-dependency/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Checkin - TACTIC Developer Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#checkin-checkout-operations" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="TACTIC Developer Docs" class="md-header__button md-logo" aria-label="TACTIC Developer Docs" data-md-component="logo">
+      
+  <img src="../images/favicon.ico" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TACTIC Developer Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Checkin
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="TACTIC Developer Docs" class="md-nav__button md-logo" aria-label="TACTIC Developer Docs" data-md-component="logo">
+      
+  <img src="../images/favicon.ico" alt="logo">
+
+    </a>
+    TACTIC Developer Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developer Start-up
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Developer Start-up
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development-concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Development Concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tactic-script-editor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tactic Script Editor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setting-up-dev-environment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setting Up Dev Environment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../watch-folder-service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Watch Folder Service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Client API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Client API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client-api-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client-api-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Examples
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client-api-basic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Checkin
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Checkin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#checking-files-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Checking files in
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simple-checkin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simple Checkin
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#group-or-sequence-checkin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Group (or Sequence) Checkin
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#directory-checkin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Directory Checkin
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#piecewise-check-ins" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Piecewise check-ins
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checkin-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Checkin Modes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preallocated-check-in-modepreallocate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preallocated check-in (mode="preallocate")
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#in-place-checkins" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        In-Place Checkins
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client-api-dependency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dependency
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../using-expressions-in-scripting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Expressions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../custom-interfaces-in-tactic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Widget Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client-api-performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Performance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client-api-hierarchy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hierarchy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Changes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../search-id-to-search-code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Search Id To Search Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Widgets
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Custom Widgets
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../custom-layout-editor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Layout Editor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../widget-development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Widget Development
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tactic-widgets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tactic Widgets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plugins
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Plugins
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plugin-manager-interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plugin Manager Interface
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create-a-plugin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Create A Plugin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../packaging-a-plugin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Packaging A Plugin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plugin-versions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plugin Versions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../packaging-python-scripts-into-a-plugin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Packaging Python Scripts Into A Plugin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Validation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup-validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setup Validation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Async Loading
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Async Loading
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../loading/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Loading
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Messaging
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Messaging
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../messaging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Messaging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Triggers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Triggers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-trigger-in-tactic-editor-guideline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python Trigger In Tactic Editor Guideline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../trigger/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trigger
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setting-up-the-schedule-event-trigger/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setting Up The Schedule Event Trigger
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Check-ins
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Check-ins
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tactic-checkin-process/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tactic Checkin Process
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../custom-checkin-pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Checkin Pipeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Naming Conventions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Naming Conventions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../naming-convention-classes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Naming Convention Classes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api_reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    List of methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general___init__/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Init  
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_get_protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_set_login_ticket/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Set Login Ticket
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_set_project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Set Project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_set_protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Set Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_set_server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Set Server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_set_site/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Set Site
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_abort/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Abort
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_add_config_element/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Add Config Element
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_add_dependency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Add Dependency
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_add_dependency_by_code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Add Dependency By Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_add_directory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Add Directory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_add_file/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Add File
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_add_group/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Add Group
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_add_initial_tasks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Add Initial Tasks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_build_search_key/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build Search Key
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_build_search_type/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build Search Type
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_check_access/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Check Access
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_checkout/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Checkout
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_clear_upload_dir/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Clear Upload Dir
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_connect_sobjects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Connect Sobjects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_create_note/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Create Note
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_create_search_type/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Create Search Type
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_create_snapshot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Create Snapshot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_create_task/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Create Task
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_delete_sobject/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Delete Sobject
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_directory_checkin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Directory Checkin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_download/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Download
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_eval/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Eval
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_execute_cmd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Execute Cmd
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_execute_js_script/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Execute Js Script
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_execute_pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Execute Pipeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_execute_python_script/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Execute Python Script
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_finish/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Finish
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_generate_ticket/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generate Ticket
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_get_all_children/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get All Children
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_get_all_dependencies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get All Dependencies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_get_all_paths_from_snapshot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get All Paths From Snapshot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_get_base_dirs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Base Dirs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_get_by_code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get By Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_get_by_search_key/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get By Search Key
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_get_child_types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Child Types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_get_client_api_version/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Api Version
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_get_client_dir/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Client Dir
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_get_client_version/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Client Version
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_get_column_info/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Column Info
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_get_column_names/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Column Names
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_get_config_definition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Config Definition
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_get_connected_sobject/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Connected Sobject
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_get_connected_sobjects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Connected Sobjects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_get_dependencies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Dependencies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_get_expanded_paths_from_snapshot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Expanded Paths From Snapshot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_get_full_snapshot_xml/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Full Snapshot Xml
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_get_handoff_dir/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Handoff Dir
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_get_home_dir/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Home Dir
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_get_info_from_user/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Info From User
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_get_input_tasks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Input Tasks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_get_interaction_count/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Interaction Count
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_get_md5_info/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Md5 Info
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_get_message/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Message
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_get_output_tasks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Output Tasks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_get_parent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Parent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_get_parent_type/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Parent Type
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_get_path_from_snapshot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Path From Snapshot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_get_paths/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Paths
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_get_pipeline_processes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Pipeline Processes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_get_pipeline_processes_info/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Pipeline Processes Info
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_get_pipeline_xml/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Pipeline Xml
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_get_pipeline_xml_info/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Pipeline Xml Info
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_get_plugin_dir/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Plugin Dir
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_get_preallocated_path/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Preallocated Path
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_get_preference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Preference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_get_related_types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Related Types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_get_resource_path/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Resource Path
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_get_server_api_version/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Server Api Version
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_get_server_version/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Server Version
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_get_snapshot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Snapshot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_get_table_info/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Table Info
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_get_ticket/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Ticket
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_get_types_from_instance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Types From Instance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_get_unique_sobject/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Unique Sobject
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_get_virtual_snapshot_path/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Virtual Snapshot Path
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_get_widget/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Widget
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_group_checkin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Group Checkin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_insert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Insert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_insert_multiple/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Insert Multiple
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_insert_update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Insert Update
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_log/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Log
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_log_message/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Log Message
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_query/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Query
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_query_snapshots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Query Snapshots
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_reactivate_sobject/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reactivate Sobject
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_redo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Redo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_retire_sobject/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Retire Sobject
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_set_config_definition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Set Config Definition
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_set_current_snapshot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Set Current Snapshot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_set_preference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Set Preference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_set_widget_settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Set Widget Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_set_widget_settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Set Widget Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_simple_checkin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Simple Checkin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_split_search_key/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Split Search Key
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_subscribe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Subscribe
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_undo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Undo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_unsubscribe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unsubscribe
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Update
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_update_config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Update Config
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_update_multiple/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Update Multiple
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client-api_general_upload_file/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Upload File
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#checking-files-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Checking files in
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simple-checkin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simple Checkin
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#group-or-sequence-checkin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Group (or Sequence) Checkin
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#directory-checkin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Directory Checkin
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#piecewise-check-ins" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Piecewise check-ins
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checkin-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Checkin Modes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preallocated-check-in-modepreallocate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preallocated check-in (mode="preallocate")
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#in-place-checkins" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        In-Place Checkins
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="checkin-checkout-operations">Checkin / Checkout Operations</h1>
+<h2 id="checking-files-in">Checking files in</h2>
+<p>The Client API has access to the full range of TACTIC’s asset management
+system.</p>
+<p>Any sObject can become a "container" for check-ins. This has the
+advantage that you can use this one SObject (container) to check in
+files using the deep set of check-in tools provided by TACTIC. The rest
+of this section describes the different types of check-ins available.</p>
+<h2 id="simple-checkin">Simple Checkin</h2>
+<p>The simple_checkin() function allows you to check in a single file.</p>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="n">file_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"./test/miso_ramen.jpg"</span>
+
+<span class="w">    </span><span class="c1"># now check in the file</span>
+<span class="w">    </span><span class="n">search_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"unittest/person"</span>
+<span class="w">    </span><span class="n">code</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"joe"</span>
+<span class="w">    </span><span class="n">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"test_checkin"</span>
+<span class="w">    </span><span class="n">search_key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">my</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">build_search_key</span><span class="p">(</span><span class="n">search_type</span><span class="p">,</span><span class="w"> </span><span class="n">code</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c1"># simple check-in of a file.  No dependencies</span>
+<span class="w">    </span><span class="n">desc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'A Simple Checkin'</span>
+<span class="w">    </span><span class="n">snapshot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">my</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">simple_checkin</span><span class="p">(</span><span class="n">search_key</span><span class="p">,</span><span class="w"> </span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="n">file_path</span><span class="p">,</span><span class="w"> </span><span class="n">description</span><span class="o">=</span><span class="n">desc</span><span class="p">,</span><span class="w"> </span><span class="n">mode</span><span class="o">=</span><span class="s2">"upload"</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">print</span><span class="w"> </span><span class="n">snapshot</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'snapshot'</span><span class="p">)</span>
+</code></pre></div>
+
+<p>The simple_checkin is the most basic type of check-in. It creates a
+snapshot and then checks a file into that snapshot. The newly created
+snapshot is returned.</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">&lt;snapshot&gt;</span>
+<span class="w">  </span><span class="nt">&lt;file</span><span class="w"> </span><span class="na">name=</span><span class="s">"miso_ramen_v001.jpg"</span><span class="w"> </span><span class="na">type=</span><span class="s">'main'</span><span class="w"> </span><span class="na">code=</span><span class="s">'123BAR'</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/snapshot&gt;</span>
+</code></pre></div>
+
+<p>The exact file name that is checked in will vary depending on the
+specific implemented naming conventions</p>
+<h2 id="group-or-sequence-checkin">Group (or Sequence) Checkin</h2>
+<p>The group_checkin() function allows you to check in a sequence of files,
+defined by a frame range:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&lt;</span><span class="nv">start</span><span class="o">&gt;-&lt;</span><span class="k">end</span><span class="o">&gt;/&lt;</span><span class="nv">by</span><span class="o">&gt;</span>
+</code></pre></div>
+
+<p>For example, a frame range of 1 to 10 is descibed as "1-10". Or every
+second frame from frame 20 to frame 50 can be described as "20-50/2".</p>
+<p>TACTIC provides two notations to describe the file names of a range of
+frames. This special notation, in conjunction with the frame range, can
+generate a sequence of files. The two notations are as follows:</p>
+<ul>
+<li>
+<p>&lt;base&gt;.<em>#</em>#.&lt;ext&gt;</p>
+</li>
+<li>
+<p>&lt;base&gt;.%0.4d.&lt;ext&gt;</p>
+</li>
+</ul>
+<p>Here is a code example of checking in a sequence of files:</p>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nx">pattern</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">"./test/miso_ramen.%0.4d.tif"</span>
+<span class="w">    </span><span class="nx">file_range</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="err">'</span><span class="mi">1</span><span class="o">-</span><span class="mi">24</span><span class="err">'</span>
+<span class="w">    </span><span class="nx">context</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="err">'</span><span class="nx">beauty</span><span class="w"> </span><span class="err">'</span>
+
+<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">build</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">search</span><span class="w"> </span><span class="nx">key</span>
+<span class="w">    </span><span class="nx">search_type</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">"unittest/person"</span>
+<span class="w">    </span><span class="nx">code</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">"joe"</span>
+<span class="w">    </span><span class="nx">search_key</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">my</span><span class="p">.</span><span class="nx">server</span><span class="p">.</span><span class="nx">build_search_key</span><span class="p">(</span><span class="nx">search_type</span><span class="p">,</span><span class="w"> </span><span class="nx">code</span><span class="p">)</span>
+
+<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">simple</span><span class="w"> </span><span class="nx">checkin</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">file</span>
+<span class="w">    </span><span class="nx">desc</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="err">'</span><span class="nx">A</span><span class="w"> </span><span class="nx">Checkin</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">group</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">files</span><span class="err">'</span>
+<span class="w">    </span><span class="nx">context</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">"test_checkin"</span>
+<span class="w">    </span><span class="nx">snapshot</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">server</span><span class="p">.</span><span class="nx">group_checkin</span><span class="p">(</span><span class="nx">search_key</span><span class="p">,</span><span class="w"> </span><span class="nx">context</span><span class="p">,</span><span class="w"> </span><span class="nx">file_pattern</span><span class="p">,</span><span class="w"> </span><span class="nx">file_range</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">print</span><span class="w"> </span><span class="nx">snapshot</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="err">'</span><span class="nx">snapshot</span><span class="err">'</span><span class="p">)</span>
+</code></pre></div>
+
+<p>When executed, this example will check in a sequence of 24 files
+starting from 1 to 24. It should be noted that this method will by
+default expect that the files have been uploaded to the server. For this
+reason, it is often recommended to use preallocated check-ins for both
+sequence and directory check-ins.</p>
+<h2 id="directory-checkin">Directory Checkin</h2>
+<p>As the name suggests, a directory check-in enables an entire directory
+and all of its subdirectories to be checked in. TACTIC does not keep
+track of the contents of the checked-in directory. This allows you to
+check in complex directory structures without having to inform TACTIC of
+all of the details of the contents. This might be the best approach when
+all the details of the directory are already handled by some other
+system so it is not necessary for TACTIC to track things.</p>
+<p>Here is a code example of checking in a directory:</p>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nx">file_path</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">"./test/XG002/beauty"</span>
+
+<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">build</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">search</span><span class="w"> </span><span class="nx">key</span>
+<span class="w">    </span><span class="nx">search_type</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">"unittest/person"</span>
+<span class="w">    </span><span class="nx">code</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">"joe"</span>
+<span class="w">    </span><span class="nx">search_key</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">my</span><span class="p">.</span><span class="nx">server</span><span class="p">.</span><span class="nx">build_search_key</span><span class="p">(</span><span class="nx">search_type</span><span class="p">,</span><span class="w"> </span><span class="nx">code</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">context</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">"test_checkin"</span>
+
+<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">simple</span><span class="w"> </span><span class="nx">check</span><span class="o">-</span><span class="k">in</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">file</span><span class="p">.</span>
+<span class="w">    </span><span class="nx">desc</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="err">'</span><span class="nx">A</span><span class="w"> </span><span class="nx">Simple</span><span class="w"> </span><span class="nx">Checkin</span><span class="err">'</span>
+<span class="w">    </span><span class="nx">snapshot</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">my</span><span class="p">.</span><span class="nx">server</span><span class="p">.</span><span class="nx">directory_checkin</span><span class="p">(</span><span class="nx">search_key</span><span class="p">,</span><span class="w"> </span><span class="nx">context</span><span class="p">,</span><span class="w"> </span><span class="nx">file_path</span><span class="p">,</span><span class="w"> </span><span class="nx">description</span><span class="p">=</span><span class="nx">desc</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">print</span><span class="w"> </span><span class="nx">snapshot</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="err">'</span><span class="nx">snapshot</span><span class="err">'</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Note that this code is very similar to single file check-ins (
+simple_checkin() ), because TACTIC treats a directory check-in in a
+similar manner to a file check-in. It uses the leaf directory as the
+file name. It is important to consider naming conventions, because this
+leaf directory will be handled using file naming conventions even though
+it is a directory.</p>
+<p>As with group_checkin(), this method already expects the files to have
+been uploaded to the server in the appropriate place. There are various
+modes that can be used to alter the manner in which the files get to the
+server repository. For details, see the "modes" section below.</p>
+<h2 id="piecewise-check-ins">Piecewise check-ins</h2>
+<p>TACTIC allows you to build up a check-in piecewise or stages. This is a
+powerful feature because you can build a check-in over the course of
+many operations (and many transactions if desired) and the whole set of
+operations will be treated as a single versioned entity. The TACTIC
+snapshot definition allows for the entry of multiple files into a single
+check-in. Typically, the process begins by creating a new "empty"
+snapshot. This snapshot is a placeholder which reserves a version and
+context for a particular set of future operations. Once this empty
+snapshot is created, you can start adding files and dependencies to it.</p>
+<p>The following example checks in a Maya file and a corresponding OBJ
+file.</p>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nx">maya_path</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">"./test/chr001/chr001_model.ma"</span>
+<span class="w">    </span><span class="nx">obj_path</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">"./test/chr001/chr001_mode.obj"</span>
+
+<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">build</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">search</span><span class="w"> </span><span class="nx">key</span>
+<span class="w">    </span><span class="nx">search_type</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">"unittest/person"</span>
+<span class="w">    </span><span class="nx">code</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">"joe"</span>
+<span class="w">    </span><span class="nx">context</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">"test_checkin"</span>
+<span class="w">    </span><span class="nx">search_key</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">my</span><span class="p">.</span><span class="nx">server</span><span class="p">.</span><span class="nx">build_search_key</span><span class="p">(</span><span class="nx">search_type</span><span class="p">,</span><span class="w"> </span><span class="nx">code</span><span class="p">)</span>
+
+<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">create</span><span class="w"> </span><span class="nx">an</span><span class="w"> </span><span class="nx">empty</span><span class="w"> </span><span class="nx">snapshot</span>
+<span class="w">    </span><span class="nx">desc</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="err">'</span><span class="nx">A</span><span class="w"> </span><span class="nx">Piecewise</span><span class="w"> </span><span class="nx">Checkin</span><span class="err">'</span>
+<span class="w">    </span><span class="nx">snapshot</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">my</span><span class="p">.</span><span class="nx">server</span><span class="p">.</span><span class="nx">create_snapshot</span><span class="p">(</span><span class="nx">search_key</span><span class="p">,</span><span class="w"> </span><span class="nx">context</span><span class="p">,</span><span class="w"> </span><span class="nx">description</span><span class="p">=</span><span class="nx">desc</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">print</span><span class="w"> </span><span class="s">"empty"</span>
+<span class="w">    </span><span class="nx">print</span><span class="w"> </span><span class="nx">snapshot</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="err">'</span><span class="nx">snapshot</span><span class="err">'</span><span class="p">)</span>
+
+<span class="w">    </span><span class="nx">snapshot_code</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">snapshot</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="err">'</span><span class="nx">code</span><span class="err">'</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">snapshot</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">my</span><span class="p">.</span><span class="nx">server</span><span class="p">.</span><span class="nx">add_file</span><span class="p">(</span><span class="nx">snapshot_code</span><span class="p">,</span><span class="w"> </span><span class="nx">maya_path</span><span class="p">,</span><span class="w"> </span><span class="nx">file_type</span><span class="p">=</span><span class="err">'</span><span class="nx">maya</span><span class="err">'</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">snapshot</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">my</span><span class="p">.</span><span class="nx">server</span><span class="p">.</span><span class="nx">add_file</span><span class="p">(</span><span class="nx">snapshot_code</span><span class="p">,</span><span class="w"> </span><span class="nx">obj_path</span><span class="p">,</span><span class="w"> </span><span class="nx">file_type</span><span class="p">=</span><span class="err">'</span><span class="nx">obj</span><span class="err">'</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">print</span>
+<span class="w">    </span><span class="nx">print</span><span class="w"> </span><span class="s">"two files"</span>
+<span class="w">    </span><span class="nx">print</span><span class="w"> </span><span class="nx">snapshot</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="err">'</span><span class="nx">snapshot</span><span class="err">'</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Executing this code will result in the following:</p>
+<div class="codehilite"><pre><span></span><code>empty
+<span class="nt">&lt;snapshot/&gt;</span>
+
+two<span class="w"> </span>files
+<span class="nt">&lt;snapshot&gt;</span>
+<span class="w">  </span><span class="nt">&lt;file</span><span class="w"> </span><span class="na">name=</span><span class="s">'chr001_model_v001.ma'</span><span class="w"> </span><span class="na">file_code=</span><span class="s">'1044BAR'</span><span class="w"> </span><span class="na">type=</span><span class="s">'maya'</span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;file</span><span class="w"> </span><span class="na">name=</span><span class="s">'chr001_model_v001.obj'</span><span class="w"> </span><span class="na">file_code=</span><span class="s">'1045BAR'</span><span class="w"> </span><span class="na">type=</span><span class="s">'obj'</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/snapshot&gt;</span>
+</code></pre></div>
+
+<p>First, an empty snapshot is created using create_snapshot(), then files
+are added to this snapshot one by one. Note that the type here is
+explicitly specified. This type differentiates one file in a snapshot
+from another.</p>
+<p>It is also possible to add a sequence of files or even a directory to a
+snapshot:</p>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nx">pattern</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">"./test/miso_ramen.%0.4d.tif"</span>
+<span class="w">    </span><span class="nx">file_range</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="err">'</span><span class="mi">1</span><span class="o">-</span><span class="mi">24</span><span class="err">'</span>
+<span class="w">    </span><span class="nx">snapshot</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">server</span><span class="p">.</span><span class="nx">add_group</span><span class="p">(</span><span class="nx">snapshot_code</span><span class="p">,</span><span class="w"> </span><span class="nx">file_pattern</span><span class="p">,</span><span class="w"> </span><span class="nx">file_range</span><span class="p">,</span><span class="w"> </span><span class="nx">file_type</span><span class="p">=</span><span class="err">'</span><span class="nx">sequence</span><span class="err">'</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">print</span><span class="w"> </span><span class="nx">snapshot</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="err">'</span><span class="nx">snapshot</span><span class="err">'</span><span class="p">)</span>
+
+<span class="w">    </span><span class="nx">directory</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">"./test/test_directory"</span>
+<span class="w">    </span><span class="nx">snapshot</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">server</span><span class="p">.</span><span class="nx">add_directory</span><span class="p">(</span><span class="nx">snapshot_code</span><span class="p">,</span><span class="w"> </span><span class="nx">directory</span><span class="p">,</span><span class="w"> </span><span class="nx">file_type</span><span class="p">=</span><span class="err">'</span><span class="nx">directory</span><span class="err">'</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">print</span><span class="w"> </span><span class="nx">snapshot</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="err">'</span><span class="nx">code</span><span class="err">'</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Executing the last code snippet will give the following results:</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">&lt;snapshot&gt;</span>
+<span class="w">  </span><span class="nt">&lt;file</span><span class="w"> </span><span class="na">name=</span><span class="s">"mise_ramen.%0.4d.tif"</span><span class="w"> </span><span class="na">file_code=</span><span class="s">'1047BAR'</span><span class="w"> </span><span class="na">type=</span><span class="s">'sequence'</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/snapshot&gt;</span>
+
+<span class="nt">&lt;snapshot&gt;</span>
+<span class="w">  </span><span class="nt">&lt;file</span><span class="w"> </span><span class="na">name=</span><span class="s">"mise_ramen.%0.4d.tif"</span><span class="w"> </span><span class="na">file_code=</span><span class="s">'1047BAR'</span><span class="w"> </span><span class="na">type=</span><span class="s">'sequence'</span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;file</span><span class="w"> </span><span class="na">name=</span><span class="s">"test_directory"</span><span class="w"> </span><span class="na">file_code=</span><span class="s">'1047BAR'</span><span class="w"> </span><span class="na">type=</span><span class="s">'directory'</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/snapshot&gt;</span>
+</code></pre></div>
+
+<h2 id="checkin-modes">Checkin Modes</h2>
+<p>There are various modes that you can use to check in files. These modes
+determine how a file will be transferred to the repository.</p>
+<ul>
+<li>
+<p>upload: Uploads the files to a temporary directory</p>
+</li>
+<li>
+<p>copy: Copies the files to the handoff directory</p>
+</li>
+<li>
+<p>move: Moves the files to the handoff directory.</p>
+</li>
+</ul>
+<p>The previous simple_checkin() example uses the "upload" mode. This means
+that the client will connect to the server and use an HTTP connection to
+upload the file to the server where it will be subsequently checked in.
+HTTP does not require any additional setup and it may be the only choice
+available for facilities having only WAN access to the TACTIC server.
+However, HTTP is a very slow transport protocol so, if possible, it is
+better and faster to use other available modes.</p>
+<p>The copy and move modes use a "handoff" directory, which is an
+intermediate directory that is visible on the network to both the client
+machine and the TACTIC server. When the check-in is executed, the files
+are first copied or moved to this handoff directory. The TACTIC server
+is then notified and grabs the files and puts them into the repository,
+renaming as the naming conventions stipulate. The files are always
+"moved" from the handoff directory to the repository. The advantage of
+using these modes over the "upload" mode is that they go through NFS or
+CIFS. These modes make use of the fast networks and huge file servers
+that are available in typical media and production facilities.</p>
+<p>The copy and modes require a bit of setup because the server and the
+client must be able to see the handoff directory. You need to configure
+the TACTIC server configuration file, located in
+&lt;site_dir&gt;/config/tactic_&lt;os&gt;-conf.xml. This file contains the following
+relevant settings:</p>
+<ul>
+<li>
+<p>win32_client_handoff_dir: the handoff directory as seen from a Windows
+    client</p>
+</li>
+<li>
+<p>linux_client_handoff_dir: the handoff directory as seen from a Linux
+    client</p>
+</li>
+<li>
+<p>win32_server_handoff_dir: the handoff directory as seen from a Windows
+    TACTIC server</p>
+</li>
+<li>
+<p>linux_server_handoff_dir: the handoff directory as seen from a Linux
+    server</p>
+</li>
+</ul>
+<p>Note that the win32 settings apply to all flavors of Windows, including
+Windows 64-bit machines. The Linux settings apply to all POSIX machines
+including Debian base operating systems and Mac OS X.</p>
+<p>After you set the configuration, you can then use the copy or move modes
+to take advantage of the handoff directory:</p>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">simple</span><span class="w"> </span><span class="nx">check</span><span class="o">-</span><span class="k">in</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">file</span><span class="w"> </span><span class="nx">using</span><span class="w"> </span><span class="nx">move</span><span class="w"> </span><span class="nx">mode</span>
+<span class="w">    </span><span class="nx">desc</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="err">'</span><span class="nx">A</span><span class="w"> </span><span class="nx">Simple</span><span class="w"> </span><span class="nx">Checkin</span><span class="err">'</span>
+<span class="w">    </span><span class="nx">snapshot</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">my</span><span class="p">.</span><span class="nx">server</span><span class="p">.</span><span class="nx">simple_checkin</span><span class="p">(</span><span class="nx">search_key</span><span class="p">,</span><span class="w"> </span><span class="nx">context</span><span class="p">,</span><span class="w"> </span><span class="nx">file_path</span><span class="p">,</span><span class="w"> </span><span class="nx">description</span><span class="p">=</span><span class="nx">desc</span><span class="p">,</span><span class="w"> </span><span class="nx">mode</span><span class="p">=</span><span class="s">"move"</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">print</span><span class="w"> </span><span class="nx">snapshot</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="err">'</span><span class="nx">snapshot</span><span class="err">'</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Note that the only difference in this example from earlier check-in
+examples is that the mode parameter is set to "move".</p>
+<h2 id="preallocated-check-in-modepreallocate">Preallocated check-in (mode="preallocate")</h2>
+<p>Preallocated check-ins are the most efficient check-ins. Bandwidth and
+storage space are expensive commodities in a typical media or production
+facility, so there is a definite cost and time benefit to reducing their
+use as much as possible.</p>
+<p>Preallocated check-ins enable a client process to be checked directly
+into the repository. They are recommended for check-ins that are very
+heavy in either bandwidth or disk usage and are designed to minimize
+both. Some production processes that would benefit from using this
+check-in mode include rendering frames, ingesting plates, simulating
+data, and so on.</p>
+<p>The following steps describe the process for preallocating check-ins:</p>
+<ol>
+<li>
+<p>Create an empty snapshot to reserve a check-in version and context.</p>
+</li>
+<li>
+<p>Ask for a path in the repository from the TACTIC server.</p>
+</li>
+<li>
+<p>Create the files directly in the path given by the TACTIC server.</p>
+</li>
+<li>
+<p>Inform TACTIC that the files have been placed in the appropriate location.</p>
+</li>
+</ol>
+<p>The path supplied by TACTIC in the preallocation is located directly in
+the repository. The process generating the files can thus save the files
+directly to the correct location in the repository (following all the
+predefined naming conventions). Files are created directly in the
+repository with the correct directory and file name as TACTIC would have
+checked them in using the other methods. This eliminates later having to
+copy or move files around the network unnecessarily, as is typically
+required by other check-in modes.</p>
+<p>Because the simple_checkin(), group_checkin() and directory_checkin()
+functions perform the entire check-in process in one step, you cannot
+use them for preallocated check-ins. Instead, you would use a piecewise
+check-in to build up the checked in parts. The following is an example
+of a preallocated check-in using a piecewise approach:</p>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nx">search_type</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">"prod/render"</span>
+<span class="w">    </span><span class="nx">code</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">"XG002_beauty"</span>
+<span class="w">    </span><span class="nx">search_key</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">my</span><span class="p">.</span><span class="nx">server</span><span class="p">.</span><span class="nx">build_search_key</span><span class="p">(</span><span class="nx">search_type</span><span class="p">,</span><span class="w"> </span><span class="nx">code</span><span class="p">)</span>
+
+<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">create</span><span class="w"> </span><span class="nx">an</span><span class="w"> </span><span class="nx">empty</span><span class="w"> </span><span class="nx">snapshot</span>
+<span class="w">    </span><span class="nx">desc</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="err">'</span><span class="nx">A</span><span class="w"> </span><span class="nx">Preallocated</span><span class="w"> </span><span class="nx">Checkin</span><span class="err">'</span>
+<span class="w">    </span><span class="nx">context</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">"render"</span>
+<span class="w">    </span><span class="nx">snapshot</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">my</span><span class="p">.</span><span class="nx">server</span><span class="p">.</span><span class="nx">create_snapshot</span><span class="p">(</span><span class="nx">search_key</span><span class="p">,</span><span class="w"> </span><span class="nx">context</span><span class="p">,</span><span class="w"> </span><span class="nx">description</span><span class="p">=</span><span class="nx">desc</span><span class="p">)</span>
+
+<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">get</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">preallocated</span><span class="w"> </span><span class="nx">path</span>
+<span class="w">    </span><span class="nx">snapshot_code</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">snapshot</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="err">'</span><span class="nx">code</span><span class="err">'</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">file_pattern</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">snapshot</span><span class="p">.</span><span class="nx">get_preallocated_path</span><span class="p">(</span><span class="nx">snapshot_code</span><span class="p">,</span><span class="w"> </span><span class="nx">file_type</span><span class="p">=</span><span class="s">"main"</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">print</span><span class="w"> </span><span class="s">"file_pattern: "</span><span class="p">,</span><span class="w"> </span><span class="nx">file_path</span>
+
+<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">generate</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">files</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nx">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">):</span>
+<span class="w">        </span><span class="nx">file_path</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">file_pattern</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="nx">i</span>
+<span class="w">        </span><span class="nx">render_file</span><span class="p">(</span><span class="nx">file_path</span><span class="p">)</span>
+
+<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">add</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">files</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">snapshot</span>
+<span class="w">    </span><span class="nx">snapshot</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">server</span><span class="p">.</span><span class="nx">add_group</span><span class="p">(</span><span class="nx">snapshot_code</span><span class="p">,</span><span class="w"> </span><span class="nx">file_type</span><span class="p">=</span><span class="s">"main"</span><span class="p">,</span><span class="w"> </span><span class="nx">file_range</span><span class="p">=</span><span class="s">"1-20"</span><span class="p">,</span><span class="w"> </span><span class="nx">mode</span><span class="p">=</span><span class="s">"preallocate"</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">print</span><span class="w"> </span><span class="nx">snapshot</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s">"snapshot"</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Executing the above code would result in output something like:</p>
+<div class="codehilite"><pre><span></span><code>file_pattern:<span class="w"> </span>XG002_beauty_v012.%0.4d.tif
+<span class="nt">&lt;snapshot&gt;</span>
+<span class="w">  </span><span class="nt">&lt;file</span><span class="w"> </span><span class="na">name=</span><span class="s">"XG002_beauty_v012.%0.4d.tif"</span><span class="w"> </span><span class="na">file_code=</span><span class="s">"123BAR"</span><span class="w"> </span><span class="na">type=</span><span class="s">"main"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/snapshot&gt;</span>
+</code></pre></div>
+
+<p>The file pattern returned is completely dependent on naming conventions.
+In this case, the search_type would have had to define a naming
+convention whereby the context of "render" produces the above file
+pattern. For example, the file naming convention code could include:</p>
+<div class="codehilite"><pre><span></span><code>def prod_render(my):
+    render = my.sobject
+    ext = my.get_file_ext()
+
+    parts = []
+    parts.append( render.get_value('code') )
+    parts.append( "v%0.3d" % my.snapshot.get_value("version")  )
+
+    file_name = "_".join(parts) + ".%0.4d" + ext
+    return file_name
+</code></pre></div>
+
+<p>(See the naming convention documentation for more information on how to
+set up naming conventions.)</p>
+<p>It should be noted that the function get_preallocated_path() returns a
+full path, including the filename as specified by the naming
+conventions. Ideally, TACTIC must be able to generate the correct path
+that can be used to save the files (as in the example above).</p>
+<p>There is enormous advantage to using preallocated check-ins. Files are
+created directly to the repository, eliminating all of the unnecessary
+copying of files around the servers. When groups of files reach the
+muti-gigabyte or even terabyte range, it becomes prohibitively expensive
+to check in files in the traditional manner. Preallocated check-ins
+maximize the use of your internal system architecture.</p>
+<h2 id="in-place-checkins">In-Place Checkins</h2>
+<p>In general, the in-place check-in should be considered as the last
+resort. In-place check-ins do not make use of the TACTIC naming
+conventions, and may be the only option when you are confronted by a
+legacy directory structure. Using this check-in method makes the
+assumption that you will be able to later define logic that will map to
+a desired naming convention. As a guideline, naming conventions should
+be procedural and as simple as possible, so you must plan carefully
+before considering in-place check-ins.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/squidfunk" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M202.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M496 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/squidfunk" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M459.4 151.7c.3 4.5.3 9.1.3 13.6 0 138.7-105.6 298.6-298.6 298.6-59.5 0-114.7-17.2-161.1-47.1 8.4 1 16.6 1.3 25.3 1.3 49.1 0 94.2-16.6 130.3-44.8-46.1-1-84.8-31.2-98.1-72.8 6.5 1 13 1.6 19.8 1.6 9.4 0 18.8-1.3 27.6-3.6-48.1-9.7-84.1-52-84.1-103v-1.3c14 7.8 30.2 12.7 47.4 13.3-28.3-18.8-46.8-51-46.8-87.4 0-19.5 5.2-37.4 14.3-53C87.4 130.8 165 172.4 252.1 176.9c-1.6-7.8-2.6-15.9-2.6-24C249.5 95.1 296.3 48 354.4 48c30.2 0 57.5 12.7 76.7 33.1 23.7-4.5 46.5-13.3 66.6-25.3-7.8 24.4-24.4 44.8-46.1 57.8 21.1-2.3 41.6-8.1 60.4-16.2-14.3 20.8-32.2 39.3-52.6 54.3"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://linkedin.com/in/squidfunk" target="_blank" rel="noopener" title="linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": "-tabs", "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

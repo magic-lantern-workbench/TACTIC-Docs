@@ -1,0 +1,4136 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://magic-lantern-workbench.github.io/TACTIC-Docs/setup/work-element-wdg/">
+      
+      
+        <link rel="prev" href="../gantt-wdg/">
+      
+      
+        <link rel="next" href="../simple-upload-wdg/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Work Element Wdg - TACTIC Setup Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#work-button" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="TACTIC Setup Docs" class="md-header__button md-logo" aria-label="TACTIC Setup Docs" data-md-component="logo">
+      
+  <img src="../images/favicon.ico" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TACTIC Setup Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Work Element Wdg
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="TACTIC Setup Docs" class="md-nav__button md-logo" aria-label="TACTIC Setup Docs" data-md-component="logo">
+      
+  <img src="../images/favicon.ico" alt="logo">
+
+    </a>
+    TACTIC Setup Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Create Projects
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Create Projects
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create-new-project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Create New Project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project-templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Templates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../layout/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Layout
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Startup
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Project Startup
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project-startup-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration-add-new-stype/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Add New Stype
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration-view-items/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    View Items
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration-add-items/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Add Items
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration-import-items/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Import Items
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration-workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration-notifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notifications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration-triggers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Triggers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration-edit-stype/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Edit Stype
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Users and Groups
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Users and Groups
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project-startup-manage-users/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manage Users
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../insert-new-user/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Insert New User
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../group-assignment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Group Assignment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User and Group Security
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User and Group Security
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manage-security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manage Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../managing-access-rules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Managing Access Rules
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reports
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reports
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project-startup-reports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reports
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sobject-chart-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sobject Chart Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plugins
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Plugins
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install-and-activate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install And Activate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../remove-and-delete/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Remove And Delete
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Project Setup
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Advanced Project Setup
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tactic-anatomy-lesson/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tactic Anatomy Lesson
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../built-in-stypes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Built In Stypes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Schema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stype-register/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stype Register
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stype-connect/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stype Connect
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Workflow
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Advanced Workflow
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project-workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pipeline-process-options/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pipeline Process Options
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sidebar
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sidebar
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tactic-sidebar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tactic Sidebar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../managing-sidebar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Managing Sidebar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../element-definition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Element Definition
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Views Configuration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Views Configuration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../view-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    View Manager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project-automation-file-naming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Naming Conventions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project-workflow-introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workflow Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modify-project-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modify Project Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Configuration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Advanced Configuration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced-schema-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schema Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced-access-rule-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Access Rule Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../remove-projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Remove Projects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16" >
+        
+          
+          <label class="md-nav__link" for="__nav_16" id="__nav_16_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Automation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_16">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Advanced Automation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tactic-event-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tactic Event System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project-automation-triggers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Automation Triggers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project-automation-notifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Automation Notifications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced-notification-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Notification Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced-event-usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Event Usage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced-trigger-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Trigger Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../versionless-checkin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Versionless Checkin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17" >
+        
+          
+          <label class="md-nav__link" for="__nav_17" id="__nav_17_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Expression Language
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_17_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_17">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Expression Language
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../expression-language-introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Expression Language Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../expression-method-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Expression Method Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../expression-variable-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Expression Variable Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" >
+        
+          
+          <label class="md-nav__link" for="__nav_18" id="__nav_18_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debugging TACTIC
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_18">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Debugging TACTIC
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exception-log/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exception Log
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_19" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_19" id="__nav_19_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Widgets
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_19_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_19">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Widgets
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tactic-widgets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tactic Widgets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../simple-table-element-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Simple Table Element Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../format-element-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Format Element Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../expression-element-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Expression Element Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../select-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Select Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../text-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Text Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../text-area-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Text Area Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../calendar-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Calendar Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-completion-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task Completion Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../explorer-table-element-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Explorer Table Element Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../general-checkin-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    General Checkin Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sobject-checkin-history-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sobject Checkin History Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../note-sheet-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Note Sheet Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-edit-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task Edit Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-schedule-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task Schedule Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-status-history-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task Status History Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../work-hours-element-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Work Hours Element Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gantt-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gantt Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Work Element Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../simple-upload-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Simple Upload Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../thumb-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Thumb Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../view-panel-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    View Panel Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../custom-layout-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Layout Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../table-layout-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Table Layout Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../select-filter-element-widget/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Select Filter Element Widget
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../checkbox-filter-element-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Checkbox Filter Element Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-element-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task Element Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../link-element-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Link Element Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_20" >
+        
+          
+          <label class="md-nav__link" for="__nav_20" id="__nav_20_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Misc
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_20_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_20">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Misc
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stype-connect/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stype Connect
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Search
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../discussion-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Discussion Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hidden-row-toggle-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hidden Row Toggle Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../custom-url-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Url Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sobject-detail-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sobject Detail Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../built-in-plugins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Built In Plugins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../drop-element-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Drop Element Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../expression-value-element-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Expression Value Element Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../submit-support-ticket/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Submit Support Ticket
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="work-button">Work Button</h1>
+<p><strong>Description</strong></p>
+<p>The Work Element Widget is used for accessing the checkin and checkout
+tool needed to handle a task assigned. After a task is assigned, an
+artist can go to the "My Tasks" or any other task page where there is a
+"Work" column which will expand to this widget. You can carry out
+serveral typical functions related to check-in and check-out in the sub
+tabs that open. You can even customize what tabs are opened when the
+work button is clicked on.</p>
+<table>
+<colgroup>
+<col width="28%" />
+<col width="71%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><p><strong>Name</strong></p></td>
+<td><p>Work</p></td>
+</tr>
+<tr class="even">
+<td><p><strong>Class</strong></p></td>
+<td><p>tactic.ui.table.WorkElementWdg</p></td>
+</tr>
+<tr class="odd">
+<td><p><strong>Category</strong></p></td>
+<td><p>Table Element Widget</p></td>
+</tr>
+<tr class="even">
+<td><p><strong>Supported Interfaces</strong></p></td>
+<td><p>TableLayoutWdg</p></td>
+</tr>
+<tr class="odd">
+<td><p><strong>TACTIC Version Support</strong></p></td>
+<td><p>3.5.0<br />
+</p></td>
+</tr>
+<tr class="even">
+<td><p><strong>Required database columns</strong></p></td>
+<td><p>none</p></td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Usage</strong></p>
+<p>When clicked on, it opens up a new Work area tab with 3 sub tabs
+underneath which comprise all the functions an artitst would need when
+assigned a task. He can enter notes, change task status, review check-in
+history, check in, and check out files.</p>
+<p>The General Check-in Widget appears in the Check-in sub tab. You can
+click "Browse" here to select the file to be checked in. The is_current
+checkbox in Options can be used to make a snapshot current on checking
+in. The link checkbox, when checked, links the sandbox directory to the
+process tied to the task. It makes it easy for an artist to jump to a
+different process and checks out their snapshots into the current
+sandbox associated with the task. Otherwise, if you check out a file
+from the model process, it will be copied to the model sandbox folder.</p>
+<p><strong>Options</strong></p>
+<table>
+<colgroup>
+<col width="28%" />
+<col width="71%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><p><strong>checkout_panel_script_path</strong></p></td>
+<td><p>Deprecated in 3.5. Use the tab_config_&lt;&gt; method to set up custom checkout tab</p></td>
+</tr>
+<tr class="even">
+<td><p><strong>checkout_script_path</strong></p></td>
+<td><p>A custom check-out script path you can specify to override the default check-out script. The default check-out script checks out everything under the selected snapshot. Refer to Example 4.</p></td>
+</tr>
+<tr class="odd">
+<td><p><strong>validate_script_path</strong></p></td>
+<td><p>A script path pointing to a JS script that is run before the actual check-in. If it throws an error using &quot;throw(&lt;error message&gt;)&quot;, the check-in will not initiate. You can also use it to run some client-side preprocessing of the file or directory.</p></td>
+</tr>
+<tr class="even">
+<td><p><strong>transfer_mode</strong></p></td>
+<td><p>Upload, copy, move, preallocate are supported. 'preallocate' can only be used if the client machine has direct disk write access to the TACTIC asset repo. It skips the need to hand off the files in the handoff directory. 'copy' is recommended for most situation when users are usually granted only read access to the TACTIC asset repo.</p></td>
+</tr>
+<tr class="odd">
+<td><p><strong>mode</strong></p></td>
+<td><p>Sequence, file, dir, and add are supported. 'sequence' is for file sequence checkin; 'file' is for single file checkin, 'dir' is for directory checkin and 'add' if for appending file or dir to an existing snapshot. If not specified, multiple selections will be available for the user to choose. Note: upload transfer mode only supports single file or file sequence check-in.</p></td>
+</tr>
+<tr class="even">
+<td><p><strong>checkin_panel_script_path</strong></p></td>
+<td><p>Deprecated in 3.5. Use the tab_config_&lt;&gt; method to set up custom checkin tab</p></td>
+</tr>
+<tr class="odd">
+<td><p><strong>checkin_script_path</strong></p></td>
+<td><p>A custom checkin script path you can specify to override the default check-in script. This can be used in conjunction with the validate_script_path.</p></td>
+</tr>
+<tr class="even">
+<td><p><strong>process</strong></p></td>
+<td><p>If set, the process specified will be pre-selected when the General Checkin Widget is drawn,</p></td>
+</tr>
+<tr class="odd">
+<td><p><strong>lock_process</strong></p></td>
+<td><p>If set to true, the user will not be able to choose a different process during check-in on the General Checkin-in Widget</p></td>
+</tr>
+<tr class="even">
+<td><p><strong>checkin_relative_dir</strong></p></td>
+<td><p>If specified, e.g. WIP, it is appended to the current sandbox directory and preselcted as the directory to be checked in. It’s applicable to Direcotry-type checkin</p></td>
+</tr>
+<tr class="odd">
+<td><p><strong>checkin_ui_options</strong></p></td>
+<td><p>It applies to the check-in options of the CheckinWdg. Supported attribute at the moment is &quot;is_current&quot; e.g. \{&quot;is_current&quot;:&quot;false&quot;} would make all check-ins non-current. \{&quot;is_current&quot;:&quot;optional&quot;} would make the checkbox unchecked by default. Not specifiying it would render the option available to the user to choose at the check-in time.</p></td>
+</tr>
+<tr class="even">
+<td><p><strong>show_versionless_folder</strong></p></td>
+<td><p>If set to true, it displays the latest and current versionless folders.</p></td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Implementation</strong></p>
+<p>The following defines the default "Work" element. It looks a bit
+complicated but in most cases, you would just need to simply change the
+different options available through "Edit Column Definition":</p>
+<div class="codehilite"><pre><span></span><code><span class="w"> </span><span class="o">&lt;</span><span class="n">element</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s2">"work"</span><span class="w"> </span><span class="n">title</span><span class="o">=</span><span class="s2">"Work on Task"</span><span class="o">&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="n">display</span><span class="w"> </span><span class="k">class</span><span class="o">=</span><span class="s2">"tactic.ui.table.WorkElementWdg"</span><span class="o">&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="n">transfer_mode</span><span class="o">&gt;</span><span class="n">upload</span><span class="o">&lt;/</span><span class="n">transfer_mode</span><span class="o">&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="n">cbjs_action</span><span class="o">&gt;</span>
+<span class="w">      </span><span class="k">var</span><span class="w"> </span><span class="n">tbody</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bvr</span><span class="o">.</span><span class="n">src_el</span><span class="o">.</span><span class="n">getParent</span><span class="p">(</span><span class="s2">".spt_table_tbody"</span><span class="p">);</span>
+<span class="w">      </span><span class="k">var</span><span class="w"> </span><span class="n">element_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tbody</span><span class="o">.</span><span class="n">getAttribute</span><span class="p">(</span><span class="s2">"spt_element_name"</span><span class="p">);</span>
+<span class="w">      </span><span class="k">var</span><span class="w"> </span><span class="n">search_key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tbody</span><span class="o">.</span><span class="n">getAttribute</span><span class="p">(</span><span class="s2">"spt_search_key"</span><span class="p">);</span>
+<span class="w">      </span><span class="k">var</span><span class="w"> </span><span class="n">checkin_script_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bvr</span><span class="o">.</span><span class="n">checkin_script_path</span><span class="p">;</span>
+<span class="w">      </span><span class="k">var</span><span class="w"> </span><span class="n">checkin_ui_options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bvr</span><span class="o">.</span><span class="n">checkin_ui_options</span><span class="p">;</span>
+<span class="w">      </span><span class="k">var</span><span class="w"> </span><span class="n">validate_script_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bvr</span><span class="o">.</span><span class="n">validate_script_path</span><span class="p">;</span>
+<span class="w">      </span><span class="k">var</span><span class="w"> </span><span class="n">checkout_script_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bvr</span><span class="o">.</span><span class="n">checkout_script_path</span><span class="p">;</span>
+<span class="w">      </span><span class="k">var</span><span class="w"> </span><span class="n">checkin_mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bvr</span><span class="o">.</span><span class="n">mode</span><span class="p">;</span>
+<span class="w">      </span><span class="k">var</span><span class="w"> </span><span class="n">transfer_mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bvr</span><span class="o">.</span><span class="n">transfer_mode</span><span class="p">;</span>
+<span class="w">      </span><span class="k">var</span><span class="w"> </span><span class="n">sandbox_dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bvr</span><span class="o">.</span><span class="n">sandbox_dir</span><span class="p">;</span>
+<span class="w">      </span><span class="k">var</span><span class="w"> </span><span class="n">lock_process</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bvr</span><span class="o">.</span><span class="n">lock_process</span><span class="p">;</span>
+
+<span class="w">      </span><span class="k">var</span><span class="w"> </span><span class="n">server</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TacticServerStub</span><span class="o">.</span><span class="n">get</span><span class="p">();</span>
+<span class="w">      </span><span class="k">var</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">server</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="w"> </span><span class="s2">"@GET(parent.code)"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">search_keys</span><span class="p">:</span><span class="w"> </span><span class="n">search_key</span><span class="p">}</span><span class="w"> </span><span class="p">);</span>
+
+<span class="w">      </span><span class="n">spt</span><span class="o">.</span><span class="n">tab</span><span class="o">.</span><span class="n">set_main_body_tab</span><span class="p">();</span>
+<span class="w">      </span><span class="n">spt</span><span class="o">.</span><span class="n">tab</span><span class="o">.</span><span class="n">add_new</span><span class="p">();</span>
+<span class="w">      </span><span class="k">var</span><span class="w"> </span><span class="n">kwargs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="s1">'search_key'</span><span class="p">:</span><span class="w"> </span><span class="n">search_key</span><span class="p">,</span>
+<span class="w">        </span><span class="s1">'checkin_script_path'</span><span class="p">:</span><span class="w"> </span><span class="n">checkin_script_path</span><span class="w"> </span><span class="p">,</span>
+<span class="w">        </span><span class="s1">'checkin_ui_options'</span><span class="p">:</span><span class="w"> </span><span class="n">checkin_ui_options</span><span class="w"> </span><span class="p">,</span>
+<span class="w">        </span><span class="s1">'validate_script_path'</span><span class="p">:</span><span class="w"> </span><span class="n">validate_script_path</span><span class="w"> </span><span class="p">,</span>
+<span class="w">        </span><span class="s1">'checkout_script_path'</span><span class="p">:</span><span class="w"> </span><span class="n">checkout_script_path</span><span class="p">,</span>
+<span class="w">        </span><span class="s1">'mode'</span><span class="p">:</span><span class="w"> </span><span class="n">checkin_mode</span><span class="w"> </span><span class="p">,</span>
+<span class="w">        </span><span class="s1">'transfer_mode'</span><span class="p">:</span><span class="w"> </span><span class="n">transfer_mode</span><span class="p">,</span>
+<span class="w">        </span><span class="s1">'sandbox_dir'</span><span class="p">:</span><span class="w"> </span><span class="n">sandbox_dir</span><span class="p">,</span>
+<span class="w">        </span><span class="s1">'lock_process'</span><span class="p">:</span><span class="w"> </span><span class="n">lock_process</span>
+
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="k">var</span><span class="w"> </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Task: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">code</span><span class="p">;</span>
+<span class="w">      </span><span class="k">var</span><span class="w"> </span><span class="k">class_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"tactic.ui.tools.sobject_wdg.TaskDetailWdg"</span><span class="p">;</span>
+<span class="w">      </span><span class="n">spt</span><span class="o">.</span><span class="n">tab</span><span class="o">.</span><span class="n">load_selected</span><span class="p">(</span><span class="n">search_key</span><span class="p">,</span><span class="w"> </span><span class="n">title</span><span class="p">,</span><span class="w"> </span><span class="k">class_name</span><span class="p">,</span><span class="w"> </span><span class="n">kwargs</span><span class="p">);</span>
+<span class="w">      </span><span class="o">&lt;/</span><span class="n">cbjs_action</span><span class="o">&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="n">icon</span><span class="o">&gt;</span><span class="n">WORK</span><span class="o">&lt;/</span><span class="n">icon</span><span class="o">&gt;</span>
+<span class="w">      </span><span class="o">&lt;/</span><span class="n">display</span><span class="o">&gt;</span>
+<span class="w"> </span><span class="o">&lt;/</span><span class="n">element</span><span class="o">&gt;</span>
+</code></pre></div>
+
+<p>The following defines a different usage of it using copy trasnfer mode,
+a custom checkout script and a custom validating checkin script. The
+value of the two script paths are the script_path you have saved in the
+Script Editor. lock_process is set to false. To enable these options,
+you can do it in the context menu "Edit Column Definition" and set the
+following:</p>
+<div class="codehilite"><pre><span></span><code>   checkout_script_path: checkout/all_processes
+   validate_script_path: checkin/validate_frames
+   transfer_mode: copy
+   lock_process: false
+</code></pre></div>
+
+<p>The following shows a way to customize what the small check-out button
+does in the checkout_tool view. In widget config, we will set the column
+definition for the element checkout for the "sthpw/snapshot" search
+type. It can be accessed through "Edit Column Definition".</p>
+<div class="codehilite"><pre><span></span><code><span class="w">   </span><span class="n">checkout_script_path</span><span class="p">:</span><span class="w"> </span><span class="n">checkout</span><span class="o">/</span><span class="n">checkout_tool_script</span>
+</code></pre></div>
+
+<p><strong>Script Samples</strong></p>
+<p>Example 1: checkin/validate_frames</p>
+<div class="codehilite"><pre><span></span><code><span class="nf">var</span><span class="w"> </span><span class="k">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bvr</span><span class="p">.</span><span class="k">values</span><span class="p">;</span>
+<span class="nf">var</span><span class="w"> </span><span class="n">file_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">values</span><span class="p">.</span><span class="n">file_paths</span><span class="o">[</span><span class="n">0</span><span class="o">]</span><span class="p">;</span>
+<span class="nf">var</span><span class="w"> </span><span class="n">sk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">values</span><span class="p">.</span><span class="n">search_key</span><span class="p">;</span>
+<span class="nf">var</span><span class="w"> </span><span class="n">applet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">spt</span><span class="p">.</span><span class="n">Applet</span><span class="p">.</span><span class="k">get</span><span class="p">();</span>
+
+<span class="nf">var</span><span class="w"> </span><span class="n">file_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">applet</span><span class="p">.</span><span class="n">list_dir</span><span class="p">(</span><span class="n">file_path</span><span class="p">);</span>
+<span class="nf">var</span><span class="w"> </span><span class="n">server</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TacticServerStub</span><span class="p">.</span><span class="k">get</span><span class="p">();</span>
+<span class="nf">var</span><span class="w"> </span><span class="n">st</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'prod/shot'</span><span class="p">;</span>
+<span class="nf">var</span><span class="w"> </span><span class="n">shot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">server</span><span class="p">.</span><span class="n">get_by_search_key</span><span class="p">(</span><span class="n">sk</span><span class="p">);</span>
+<span class="nf">var</span><span class="w"> </span><span class="n">frame_count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">parseInt</span><span class="p">(</span><span class="n">shot</span><span class="p">.</span><span class="n">frame_count</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="nf">var</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="n">file_list</span><span class="p">.</span><span class="n">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="err">{</span>
+
+<span class="w">    </span><span class="nf">var</span><span class="w"> </span><span class="n">base</span><span class="w"> </span><span class="o">=</span><span class="n">spt</span><span class="p">.</span><span class="k">path</span><span class="p">.</span><span class="n">get_basename</span><span class="p">(</span><span class="n">file_list</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">base</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">'FRAMES'</span><span class="p">)</span><span class="w"> </span><span class="err">{</span>
+<span class="w">        </span><span class="nf">var</span><span class="w"> </span><span class="n">frames</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">applet</span><span class="p">.</span><span class="n">list_dir</span><span class="p">(</span><span class="n">file_list</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">frames</span><span class="p">.</span><span class="n">length</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">frame_count</span><span class="p">)</span><span class="w"> </span><span class="err">{</span>
+<span class="w">             </span><span class="k">throw</span><span class="p">(</span><span class="s1">'Frames length in FRAMES ['</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">frames</span><span class="p">.</span><span class="n">length</span>
+<span class="w">                </span><span class="o">+</span><span class="w"> </span><span class="s1">'] folder does not match shot\'</span><span class="n">s</span><span class="w"> </span><span class="n">frame</span><span class="w"> </span><span class="nf">count</span><span class="err">'</span><span class="p">);</span>
+<span class="w">        </span><span class="err">}</span>
+
+<span class="w">    </span><span class="err">}</span>
+<span class="err">}</span>
+</code></pre></div>
+
+<p>Example 2: checkout/all_processes. It illustrates how to implement a
+custom check-out that only checks out a portion of what has been checked
+in.</p>
+<div class="codehilite"><pre><span></span><code><span class="o">//</span><span class="n">back</span><span class="w"> </span><span class="n">up</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">Work</span><span class="o">-</span><span class="ow">in</span><span class="o">-</span><span class="n">progress</span><span class="w"> </span><span class="n">folder</span>
+<span class="k">function</span><span class="w"> </span><span class="n">backup_WIP</span><span class="p">(</span><span class="n">bvr</span><span class="p">)</span><span class="w"> </span><span class="err">{</span>
+<span class="w">     </span><span class="nf">var</span><span class="w"> </span><span class="n">sandbox_dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bvr</span><span class="p">.</span><span class="n">sandbox_dir</span><span class="p">;</span>
+<span class="w">     </span><span class="nf">var</span><span class="w"> </span><span class="n">applet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">spt</span><span class="p">.</span><span class="n">Applet</span><span class="p">.</span><span class="k">get</span><span class="p">();</span>
+<span class="w">     </span><span class="nf">var</span><span class="w"> </span><span class="n">found_WIP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+<span class="w">     </span><span class="nf">var</span><span class="w"> </span><span class="n">dirs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">applet</span><span class="p">.</span><span class="n">list_dir</span><span class="p">(</span><span class="n">sandbox_dir</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+
+<span class="w">     </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="nf">var</span><span class="w"> </span><span class="n">k</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">dirs</span><span class="p">.</span><span class="n">length</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="o">++</span><span class="p">)</span><span class="err">{</span>
+<span class="w">         </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">/</span><span class="n">WIP</span><span class="err">$</span><span class="o">/</span><span class="p">.</span><span class="n">test</span><span class="p">(</span><span class="n">dirs</span><span class="o">[</span><span class="n">k</span><span class="o">]</span><span class="p">))</span><span class="err">{</span>
+<span class="w">            </span><span class="n">found_WIP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="w">            </span><span class="k">break</span><span class="p">;</span>
+<span class="w">         </span><span class="err">}</span>
+<span class="w">     </span><span class="err">}</span>
+<span class="w">     </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="err">!</span><span class="n">found_WIP</span><span class="p">)</span><span class="w"> </span><span class="err">{</span>
+<span class="w">           </span><span class="n">alert</span><span class="p">(</span><span class="s1">'WIP folder not found. Backing up of WIP folder aborted'</span><span class="p">)</span>
+<span class="w">     </span><span class="err">}</span>
+<span class="w">     </span><span class="k">else</span><span class="w"> </span><span class="err">{</span>
+
+<span class="w">     </span><span class="nf">var</span><span class="w"> </span><span class="n">server</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TacticServerStub</span><span class="p">.</span><span class="k">get</span><span class="p">();</span>
+<span class="w">     </span><span class="nf">var</span><span class="w"> </span><span class="n">folder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">spt</span><span class="p">.</span><span class="k">path</span><span class="p">.</span><span class="n">get_basename</span><span class="p">(</span><span class="n">sandbox_dir</span><span class="p">);</span>
+
+<span class="w">     </span><span class="nf">var</span><span class="w"> </span><span class="n">date_obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nc">Date</span><span class="p">();</span>
+<span class="w">     </span><span class="nf">var</span><span class="w"> </span><span class="n">suffix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">date_obj</span><span class="p">.</span><span class="n">getFullYear</span><span class="p">().</span><span class="n">toString</span><span class="p">()</span>
+<span class="w">             </span><span class="o">+</span><span class="w"> </span><span class="n">spt</span><span class="p">.</span><span class="n">zero_pad</span><span class="p">((</span><span class="n">date_obj</span><span class="p">.</span><span class="n">getMonth</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">).</span><span class="n">toString</span><span class="p">(),</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+<span class="w">             </span><span class="o">+</span><span class="w"> </span><span class="n">spt</span><span class="p">.</span><span class="n">zero_pad</span><span class="p">(</span><span class="n">date_obj</span><span class="p">.</span><span class="nf">getDate</span><span class="p">().</span><span class="n">toString</span><span class="p">(),</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">'_'</span><span class="w">  </span><span class="o">+</span>
+<span class="w">               </span><span class="n">spt</span><span class="p">.</span><span class="n">zero_pad</span><span class="p">(</span><span class="n">date_obj</span><span class="p">.</span><span class="n">getHours</span><span class="p">().</span><span class="n">toString</span><span class="p">(),</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+<span class="w">                </span><span class="o">+</span><span class="w"> </span><span class="n">spt</span><span class="p">.</span><span class="n">zero_pad</span><span class="p">(</span><span class="n">date_obj</span><span class="p">.</span><span class="n">getMinutes</span><span class="p">().</span><span class="n">toString</span><span class="p">(),</span><span class="mi">2</span><span class="p">);</span>
+
+<span class="w">     </span><span class="nf">var</span><span class="w"> </span><span class="n">parts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sandbox_dir</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="o">/[</span><span class="n">\/\\</span><span class="o">]/</span><span class="p">);</span>
+
+
+<span class="w">     </span><span class="n">sandbox_dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sandbox_dir</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">'/WIP'</span><span class="p">;</span>
+<span class="w">     </span><span class="nf">var</span><span class="w"> </span><span class="n">backup_dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">parts</span><span class="p">.</span><span class="k">join</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span><span class="w">  </span><span class="o">+</span><span class="w"> </span><span class="s1">'/WIP'</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">'_'</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">suffix</span><span class="p">;</span>
+
+
+<span class="w">     </span><span class="n">applet</span><span class="p">.</span><span class="n">copytree</span><span class="p">(</span><span class="n">sandbox_dir</span><span class="p">,</span><span class="w"> </span><span class="n">backup_dir</span><span class="p">);</span>
+
+<span class="w">     </span><span class="o">//</span><span class="n">remove</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">contents</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">WIP</span>
+<span class="w">     </span><span class="n">applet</span><span class="p">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">sandbox_dir</span><span class="p">);</span>
+<span class="w">     </span><span class="n">applet</span><span class="p">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">sandbox_dir</span><span class="p">);</span>
+
+<span class="w">     </span><span class="err">}</span>
+<span class="err">}</span>
+
+<span class="o">//</span><span class="w"> </span><span class="n">just</span><span class="w"> </span><span class="n">checkout</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">subfolder</span><span class="w"> </span><span class="n">named</span><span class="w"> </span><span class="k">REF</span><span class="p">.</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">it</span><span class="s1">'s not found, just check out the</span>
+<span class="s1">// first subfolder</span>
+<span class="s1">function checkout_snapshot_table(bvr){</span>
+
+<span class="s1">    var top = bvr.src_el.getParent(".spt_checkin_top");</span>
+<span class="s1">    var table = top.getElement(".spt_table");</span>
+<span class="s1">    var search_keys = spt.dg_table.get_selected_search_keys(table);</span>
+<span class="s1">    if (search_keys.length == 0) {</span>
+<span class="s1">         alert('</span><span class="n">Please</span><span class="w"> </span><span class="k">check</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">checkbox</span><span class="p">(</span><span class="n">es</span><span class="p">)</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">check</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">version</span><span class="p">.</span><span class="s1">');</span>
+<span class="s1">    }</span>
+<span class="s1">    else if (search_keys.length &gt; 1) {</span>
+<span class="s1">        alert('</span><span class="n">Please</span><span class="w"> </span><span class="k">check</span><span class="w"> </span><span class="k">only</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">checkbox</span><span class="w"> </span><span class="k">at</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="nc">time</span><span class="p">.</span><span class="w"> </span><span class="n">Multi</span><span class="o">-</span><span class="n">selection</span><span class="w"> </span><span class="k">is</span><span class="s1">' +</span>
+<span class="s1">'</span><span class="w"> </span><span class="k">only</span><span class="w"> </span><span class="n">supported</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="k">Full</span><span class="w"> </span><span class="k">Check</span><span class="o">-</span><span class="k">out</span><span class="w"> </span><span class="n">Selected</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">Gear</span><span class="w"> </span><span class="n">menu</span><span class="p">.</span><span class="s1">');</span>
+<span class="s1">        return;</span>
+<span class="s1">    }</span>
+
+<span class="s1">    spt.app_busy.show("Custom Check-out snapshots", "Copying to Sandbox...");</span>
+<span class="s1">    var server = TacticServerStub.get();</span>
+
+<span class="s1">    var top = bvr.src_el.getParent('</span><span class="p">.</span><span class="n">spt_checkin_top</span><span class="s1">');</span>
+<span class="s1">    var sandbox_input = top.getElement('</span><span class="p">.</span><span class="n">spt_sandbox_dir</span><span class="s1">');</span>
+<span class="s1">    if (sandbox_input)</span>
+<span class="s1">        bvr.sandbox_dir = sandbox_input.value;</span>
+<span class="s1">    for (var i =0; i &lt; search_keys.length; i++) {</span>
+
+<span class="s1">        checkout_snapshot(bvr, search_keys[i]);</span>
+<span class="s1">    }</span>
+<span class="s1">    spt.app_busy.hide();</span>
+<span class="s1">}</span>
+
+<span class="s1">function checkout_snapshot(bvr, snapshot_key, downlevel) {</span>
+<span class="s1">        var server = TacticServerStub.get();</span>
+
+
+<span class="s1">        try {</span>
+<span class="s1">        var paths = server.get_all_paths_from_snapshot(snapshot_key);</span>
+
+
+<span class="s1">        //var sandbox_dir =</span>
+<span class="s1">server.get_client_dir(snapshot_key,{mode:'</span><span class="n">sandbox</span><span class="s1">'});</span>
+<span class="s1">        var sandbox_dir = bvr.sandbox_dir;</span>
+<span class="s1">        var applet = spt.Applet.get();</span>
+
+<span class="s1">        for (var i = 0; i &lt; paths.length; i++ ) {</span>
+<span class="s1">            var path = paths[i];</span>
+<span class="s1">            var parts = path.split(/[\/\\]/);</span>
+<span class="s1">            var dirs = applet.list_dir(path);</span>
+
+
+<span class="s1">            var tar_dir = '';</span>
+<span class="s1">            for (var j=0; j &lt; dirs.length; j++) {</span>
+<span class="s1">                 if ((/REF/i).test(dirs[j]))</span>
+<span class="s1">                     tar_dir = dirs[j];</span>
+<span class="s1">            }</span>
+<span class="s1">            //just take the first one if REF is not found</span>
+<span class="s1">            if (!tar_dir) {</span>
+<span class="s1">                 alert('</span><span class="k">REF</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="k">found</span><span class="p">.</span><span class="w"> </span><span class="k">First</span><span class="w"> </span><span class="n">subfolder</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">checked</span><span class="w"> </span><span class="k">out</span><span class="s1">');</span>
+<span class="s1">                 tar_dir = dirs[0];</span>
+<span class="s1">            }</span>
+
+<span class="s1">            var folder = spt.path.get_basename(tar_dir);</span>
+<span class="s1">            var new_path = path + '</span><span class="o">/</span><span class="s1">' + folder;</span>
+
+<span class="s1">            var sand_paths = applet.list_dir(sandbox_dir, 0);</span>
+<span class="s1">            for (var j=0; j&lt; sand_paths.length; j++) {</span>
+<span class="s1">                 var dst_folder = spt.path.get_basename(sand_paths[j]);</span>
+<span class="s1">                 if (dst_folder == '</span><span class="k">REF</span><span class="s1">') {</span>
+<span class="s1">                      alert('</span><span class="k">REF</span><span class="w"> </span><span class="n">folder</span><span class="w"> </span><span class="n">already</span><span class="w"> </span><span class="ow">exists</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="o">[</span><span class="n">'</span>
+<span class="n">                       + sandbox_dir + '</span><span class="o">]</span><span class="w"> </span><span class="n">Please</span><span class="w"> </span><span class="n">rename</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">remove</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="k">first</span><span class="p">.</span><span class="err">'</span><span class="p">);</span>
+<span class="w">                      </span><span class="k">return</span><span class="p">;</span>
+<span class="w">                 </span><span class="err">}</span>
+<span class="w">            </span><span class="err">}</span>
+
+<span class="w">            </span><span class="o">//</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">applet</span><span class="w"> </span><span class="n">can</span><span class="w"> </span><span class="n">decide</span><span class="w"> </span><span class="ow">between</span><span class="w"> </span><span class="n">copy_file</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">copytree</span>
+
+<span class="w">            </span><span class="n">applet</span><span class="p">.</span><span class="n">copytree</span><span class="p">(</span><span class="n">new_path</span><span class="p">,</span><span class="w"> </span><span class="n">sandbox_dir</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="ss">"/"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">folder</span><span class="p">);</span>
+
+<span class="w">        </span><span class="err">}</span>
+<span class="w">        </span><span class="err">}</span>
+<span class="w">        </span><span class="k">catch</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="err">{</span>
+<span class="w">          </span><span class="n">alert</span><span class="p">(</span><span class="n">spt</span><span class="p">.</span><span class="k">exception</span><span class="p">.</span><span class="n">handler</span><span class="p">(</span><span class="n">e</span><span class="p">));</span>
+<span class="w">        </span><span class="err">}</span>
+<span class="w">    </span><span class="err">}</span>
+
+
+<span class="n">backup_WIP</span><span class="p">(</span><span class="n">bvr</span><span class="p">);</span>
+<span class="nf">var</span><span class="w"> </span><span class="n">down_level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="n">checkout_snapshot_table</span><span class="p">(</span><span class="n">bvr</span><span class="p">,</span><span class="w"> </span><span class="n">down_level</span><span class="p">);</span>
+</code></pre></div>
+
+<p>Example 3: Custom Checkout button callback passing a specific script for
+the Check-out Widget popup using display option
+"checkout_panel_script_path"</p>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="k">class_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'tactic.ui.widget.CheckoutWdg'</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bvr</span><span class="o">.</span><span class="n">values</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">search_key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">values</span><span class="o">.</span><span class="n">search_key</span><span class="p">;</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">sandbox_dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">values</span><span class="o">.</span><span class="n">sandbox_dir</span><span class="p">;</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">process</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">values</span><span class="o">.</span><span class="n">process</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s1">'show_publish'</span><span class="p">:</span><span class="w"> </span><span class="s1">'false'</span><span class="p">,</span>
+<span class="w">        </span><span class="s1">'process'</span><span class="p">:</span><span class="w"> </span><span class="n">process</span><span class="p">,</span>
+<span class="w">        </span><span class="s1">'search_key'</span><span class="p">:</span><span class="w"> </span><span class="n">search_key</span><span class="p">,</span>
+<span class="w">        </span><span class="s1">'checkout_script_path'</span><span class="p">:</span><span class="w"> </span><span class="s1">'checkout/custom_checkout'</span><span class="p">,</span>
+<span class="w">        </span><span class="s1">'sandbox_dir'</span><span class="p">:</span><span class="w"> </span><span class="n">sandbox_dir</span>
+<span class="w">            </span><span class="p">};</span>
+<span class="w">   </span><span class="k">var</span><span class="w"> </span><span class="n">popup_id</span><span class="w"> </span><span class="o">=</span><span class="s1">'Check-out Widget'</span><span class="p">;</span>
+<span class="w">   </span><span class="n">spt</span><span class="o">.</span><span class="n">panel</span><span class="o">.</span><span class="n">load_popup</span><span class="p">(</span><span class="n">popup_id</span><span class="p">,</span><span class="w"> </span><span class="k">class_name</span><span class="p">,</span><span class="w"> </span><span class="n">options</span><span class="p">);</span>
+</code></pre></div>
+
+<p>Example 4: Custom check-out script for the small check-out button in the
+checkout_tool view. This can be used to customize a quick-checkout for
+the latest or current snapshot without opening the Check-out popup
+widget, using display option "checkout_script_path"</p>
+<div class="codehilite"><pre><span></span><code><span class="k">function</span><span class="w"> </span><span class="n">checkout_snapshot</span><span class="p">(</span><span class="n">bvr</span><span class="p">)</span><span class="w"> </span><span class="err">{</span>
+<span class="w">    </span><span class="nf">var</span><span class="w"> </span><span class="k">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bvr</span><span class="p">.</span><span class="k">values</span><span class="p">;</span>
+
+<span class="w">    </span><span class="nf">var</span><span class="w"> </span><span class="n">snapshot_key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">values</span><span class="p">.</span><span class="n">search_key</span><span class="p">;</span>
+<span class="w">    </span><span class="nf">var</span><span class="w"> </span><span class="n">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">values</span><span class="p">.</span><span class="n">context</span><span class="p">;</span>
+
+
+<span class="w">        </span><span class="nf">var</span><span class="w"> </span><span class="n">server</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TacticServerStub</span><span class="p">.</span><span class="k">get</span><span class="p">();</span>
+<span class="w">        </span><span class="o">//</span><span class="w"> </span><span class="k">get</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">files</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">snapshot</span><span class="p">,</span><span class="w"> </span><span class="n">always</span><span class="w"> </span><span class="k">get</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">latest</span>
+<span class="w">        </span><span class="o">//</span><span class="w"> </span><span class="n">instead</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">relying</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">last</span><span class="w"> </span><span class="n">snapshot</span><span class="w"> </span><span class="k">when</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">UI</span><span class="w"> </span><span class="n">was</span><span class="w"> </span><span class="n">drawn</span>
+
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="err">{</span>
+<span class="w">        </span><span class="nf">var</span><span class="w"> </span><span class="n">paths</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">server</span><span class="p">.</span><span class="n">get_all_paths_from_snapshot</span><span class="p">(</span><span class="n">snapshot_key</span><span class="p">);</span>
+
+<span class="w">        </span><span class="o">//</span><span class="nf">var</span><span class="w"> </span><span class="n">sandbox_dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">server</span><span class="p">.</span><span class="n">get_client_dir</span><span class="p">(</span><span class="n">snapshot_key</span><span class="p">,</span><span class="err">{</span><span class="nl">mode</span><span class="p">:</span><span class="s1">'sandbox'</span><span class="err">}</span><span class="p">);</span>
+<span class="w">        </span><span class="o">//</span><span class="w"> </span><span class="n">This</span><span class="w"> </span><span class="n">one</span><span class="w"> </span><span class="n">comes</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="k">values</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">sandbox_dir</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">determined</span><span class="w"> </span><span class="k">by</span>
+<span class="w">        </span><span class="o">//</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">snapshot</span><span class="w"> </span><span class="k">only</span>
+<span class="w">        </span><span class="nf">var</span><span class="w"> </span><span class="n">sandbox_dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">values</span><span class="p">.</span><span class="n">sandbox_dir</span><span class="p">;</span>
+
+<span class="w">        </span><span class="nf">var</span><span class="w"> </span><span class="n">applet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">spt</span><span class="p">.</span><span class="n">Applet</span><span class="p">.</span><span class="k">get</span><span class="p">();</span>
+
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="nf">var</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">paths</span><span class="p">.</span><span class="n">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="err">{</span>
+<span class="w">            </span><span class="nf">var</span><span class="w"> </span><span class="k">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">paths</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span>
+<span class="w">            </span><span class="nf">var</span><span class="w"> </span><span class="n">parts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">path</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="o">/[</span><span class="n">\/\\</span><span class="o">]/</span><span class="p">);</span>
+<span class="w">            </span><span class="nf">var</span><span class="w"> </span><span class="n">dirs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">applet</span><span class="p">.</span><span class="n">list_dir</span><span class="p">(</span><span class="k">path</span><span class="p">);</span>
+
+
+<span class="w">            </span><span class="nf">var</span><span class="w"> </span><span class="n">tar_dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">''</span><span class="p">;</span>
+<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="nf">var</span><span class="w"> </span><span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">dirs</span><span class="p">.</span><span class="n">length</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="err">{</span>
+<span class="w">                 </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="o">/</span><span class="k">REF</span><span class="o">/</span><span class="n">i</span><span class="p">).</span><span class="n">test</span><span class="p">(</span><span class="n">dirs</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="p">))</span>
+<span class="w">                     </span><span class="n">tar_dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dirs</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="p">;</span>
+<span class="w">            </span><span class="err">}</span>
+<span class="w">            </span><span class="o">//</span><span class="n">just</span><span class="w"> </span><span class="n">take</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">first</span><span class="w"> </span><span class="n">one</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">REF</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="k">found</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="err">!</span><span class="n">tar_dir</span><span class="p">)</span><span class="w"> </span><span class="err">{</span>
+<span class="w">                 </span><span class="n">alert</span><span class="p">(</span><span class="s1">'REF not found. First subfolder is checked out'</span><span class="p">);</span>
+<span class="w">                 </span><span class="n">tar_dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dirs</span><span class="o">[</span><span class="n">0</span><span class="o">]</span><span class="p">;</span>
+<span class="w">            </span><span class="err">}</span>
+<span class="w">            </span><span class="nf">var</span><span class="w"> </span><span class="n">folder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">spt</span><span class="p">.</span><span class="k">path</span><span class="p">.</span><span class="n">get_basename</span><span class="p">(</span><span class="n">tar_dir</span><span class="p">)</span>
+<span class="w">            </span><span class="nf">var</span><span class="w"> </span><span class="n">new_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">path</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">'/'</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">folder</span><span class="p">;</span>
+
+<span class="w">            </span><span class="nf">var</span><span class="w"> </span><span class="n">sand_paths</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">applet</span><span class="p">.</span><span class="n">list_dir</span><span class="p">(</span><span class="n">sandbox_dir</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="nf">var</span><span class="w"> </span><span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">&lt;</span><span class="w"> </span><span class="n">sand_paths</span><span class="p">.</span><span class="n">length</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="err">{</span>
+<span class="w">                 </span><span class="nf">var</span><span class="w"> </span><span class="n">dst_folder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">spt</span><span class="p">.</span><span class="k">path</span><span class="p">.</span><span class="n">get_basename</span><span class="p">(</span><span class="n">sand_paths</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="p">);</span>
+<span class="w">                 </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">dst_folder</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">'REF'</span><span class="p">)</span><span class="w"> </span><span class="err">{</span>
+<span class="w">                      </span><span class="n">alert</span><span class="p">(</span><span class="s1">'REF folder already exists in ['</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">sandbox_dir</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">'] Please rename or remove it first to avoid mixing files.'</span><span class="p">);</span>
+<span class="w">                      </span><span class="k">return</span><span class="p">;</span>
+<span class="w">                 </span><span class="err">}</span>
+<span class="w">            </span><span class="err">}</span>
+
+<span class="w">            </span><span class="o">//</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">applet</span><span class="w"> </span><span class="n">can</span><span class="w"> </span><span class="n">decide</span><span class="w"> </span><span class="ow">between</span><span class="w"> </span><span class="n">copy_file</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">copytree</span>
+<span class="w">            </span><span class="n">applet</span><span class="p">.</span><span class="n">copytree</span><span class="p">(</span><span class="n">new_path</span><span class="p">,</span><span class="w"> </span><span class="n">sandbox_dir</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="ss">"/"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">folder</span><span class="p">);</span>
+<span class="w">        </span><span class="err">}</span>
+<span class="w">        </span><span class="err">}</span>
+<span class="w">        </span><span class="k">catch</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="err">{</span>
+<span class="w">          </span><span class="n">alert</span><span class="p">(</span><span class="n">spt</span><span class="p">.</span><span class="k">exception</span><span class="p">.</span><span class="n">handler</span><span class="p">(</span><span class="n">e</span><span class="p">));</span>
+<span class="w">        </span><span class="err">}</span>
+<span class="w">    </span><span class="err">}</span>
+<span class="n">checkout_snapshot</span><span class="p">(</span><span class="n">bvr</span><span class="p">);</span>
+</code></pre></div>
+
+<p>Example 5: Custom checkin_script using display option
+"checkin_script_path". The default snapshot_type is file, if the file
+extension is .mov, the snapshot_type is set to 'mov'.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">file_paths</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">bvr</span><span class="p">.</span><span class="nx">values</span><span class="p">.</span><span class="nx">file_paths</span><span class="p">;</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">description</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">bvr</span><span class="p">.</span><span class="nx">values</span><span class="p">.</span><span class="nx">description</span><span class="p">;</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">search_key</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">bvr</span><span class="p">.</span><span class="nx">values</span><span class="p">.</span><span class="nx">search_key</span><span class="p">;</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">context</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">bvr</span><span class="p">.</span><span class="nx">values</span><span class="p">.</span><span class="nx">context</span><span class="p">;</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">transfer_mode</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">bvr</span><span class="p">.</span><span class="nx">values</span><span class="p">.</span><span class="nx">transfer_mode</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">is_current</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">bvr</span><span class="p">.</span><span class="nx">values</span><span class="p">.</span><span class="nx">is_current</span><span class="p">;</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">path</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">file_paths</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nx">spt</span><span class="p">.</span><span class="nx">app_busy</span><span class="p">.</span><span class="nx">show</span><span class="p">(</span><span class="s">"File Checkin"</span><span class="p">,</span><span class="w"> </span><span class="nx">path</span><span class="p">);</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">snapshot_type</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="err">'</span><span class="nx">file</span><span class="err">'</span><span class="p">;</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">path</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="o">/</span><span class="err">\\</span><span class="p">.</span><span class="nx">mov</span><span class="err">$</span><span class="o">/</span><span class="p">)){</span>
+<span class="w">    </span><span class="nx">snapshot_type</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="err">'</span><span class="nx">mov</span><span class="err">'</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">server</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">TacticServerStub</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
+<span class="nx">snapshot</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">server</span><span class="p">.</span><span class="nx">simple_checkin</span><span class="p">(</span><span class="nx">search_key</span><span class="p">,</span><span class="w"> </span><span class="nx">context</span><span class="p">,</span><span class="w"> </span><span class="nx">path</span><span class="p">,</span>
+<span class="p">{</span><span class="nx">description</span><span class="p">:</span><span class="w"> </span><span class="nx">description</span><span class="p">,</span><span class="w"> </span><span class="nx">mode</span><span class="p">:</span><span class="w"> </span><span class="nx">transfer_mode</span><span class="p">,</span><span class="w"> </span><span class="nx">is_current</span><span class="p">:</span><span class="w"> </span><span class="nx">is_current</span><span class="p">,</span>
+<span class="w"> </span><span class="nx">snapshot_type</span><span class="p">:</span><span class="err">'</span><span class="nx">mov</span><span class="err">'</span><span class="p">});</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/squidfunk" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M202.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M496 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/squidfunk" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M459.4 151.7c.3 4.5.3 9.1.3 13.6 0 138.7-105.6 298.6-298.6 298.6-59.5 0-114.7-17.2-161.1-47.1 8.4 1 16.6 1.3 25.3 1.3 49.1 0 94.2-16.6 130.3-44.8-46.1-1-84.8-31.2-98.1-72.8 6.5 1 13 1.6 19.8 1.6 9.4 0 18.8-1.3 27.6-3.6-48.1-9.7-84.1-52-84.1-103v-1.3c14 7.8 30.2 12.7 47.4 13.3-28.3-18.8-46.8-51-46.8-87.4 0-19.5 5.2-37.4 14.3-53C87.4 130.8 165 172.4 252.1 176.9c-1.6-7.8-2.6-15.9-2.6-24C249.5 95.1 296.3 48 354.4 48c30.2 0 57.5 12.7 76.7 33.1 23.7-4.5 46.5-13.3 66.6-25.3-7.8 24.4-24.4 44.8-46.1 57.8 21.1-2.3 41.6-8.1 60.4-16.2-14.3 20.8-32.2 39.3-52.6 54.3"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://linkedin.com/in/squidfunk" target="_blank" rel="noopener" title="linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": "-tabs", "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

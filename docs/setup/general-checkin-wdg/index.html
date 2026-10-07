@@ -1,0 +1,4178 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://magic-lantern-workbench.github.io/TACTIC-Docs/setup/general-checkin-wdg/">
+      
+      
+        <link rel="prev" href="../explorer-table-element-wdg/">
+      
+      
+        <link rel="next" href="../sobject-checkin-history-wdg/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>General Checkin Wdg - TACTIC Setup Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#general-check-in-widget" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="TACTIC Setup Docs" class="md-header__button md-logo" aria-label="TACTIC Setup Docs" data-md-component="logo">
+      
+  <img src="../images/favicon.ico" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TACTIC Setup Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              General Checkin Wdg
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="TACTIC Setup Docs" class="md-nav__button md-logo" aria-label="TACTIC Setup Docs" data-md-component="logo">
+      
+  <img src="../images/favicon.ico" alt="logo">
+
+    </a>
+    TACTIC Setup Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Create Projects
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Create Projects
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create-new-project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Create New Project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project-templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Templates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../layout/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Layout
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Startup
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Project Startup
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project-startup-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration-add-new-stype/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Add New Stype
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration-view-items/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    View Items
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration-add-items/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Add Items
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration-import-items/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Import Items
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration-workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration-notifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notifications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration-triggers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Triggers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration-edit-stype/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Edit Stype
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Users and Groups
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Users and Groups
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project-startup-manage-users/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manage Users
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../insert-new-user/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Insert New User
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../group-assignment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Group Assignment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User and Group Security
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User and Group Security
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manage-security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manage Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../managing-access-rules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Managing Access Rules
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reports
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reports
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project-startup-reports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reports
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sobject-chart-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sobject Chart Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plugins
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Plugins
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install-and-activate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install And Activate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../remove-and-delete/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Remove And Delete
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Project Setup
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Advanced Project Setup
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tactic-anatomy-lesson/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tactic Anatomy Lesson
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../built-in-stypes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Built In Stypes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Schema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stype-register/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stype Register
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stype-connect/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stype Connect
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Workflow
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Advanced Workflow
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project-workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pipeline-process-options/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pipeline Process Options
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sidebar
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sidebar
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tactic-sidebar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tactic Sidebar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../managing-sidebar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Managing Sidebar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../element-definition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Element Definition
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Views Configuration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Views Configuration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../view-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    View Manager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project-automation-file-naming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Naming Conventions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project-workflow-introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workflow Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modify-project-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modify Project Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Configuration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Advanced Configuration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced-schema-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schema Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced-access-rule-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Access Rule Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../remove-projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Remove Projects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16" >
+        
+          
+          <label class="md-nav__link" for="__nav_16" id="__nav_16_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Automation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_16">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Advanced Automation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tactic-event-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tactic Event System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project-automation-triggers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Automation Triggers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project-automation-notifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Automation Notifications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced-notification-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Notification Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced-event-usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Event Usage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced-trigger-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Trigger Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../versionless-checkin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Versionless Checkin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17" >
+        
+          
+          <label class="md-nav__link" for="__nav_17" id="__nav_17_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Expression Language
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_17_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_17">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Expression Language
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../expression-language-introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Expression Language Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../expression-method-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Expression Method Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../expression-variable-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Expression Variable Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" >
+        
+          
+          <label class="md-nav__link" for="__nav_18" id="__nav_18_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debugging TACTIC
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_18">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Debugging TACTIC
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exception-log/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exception Log
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_19" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_19" id="__nav_19_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Widgets
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_19_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_19">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Widgets
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tactic-widgets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tactic Widgets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../simple-table-element-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Simple Table Element Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../format-element-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Format Element Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../expression-element-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Expression Element Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../select-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Select Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../text-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Text Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../text-area-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Text Area Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../calendar-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Calendar Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-completion-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task Completion Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../explorer-table-element-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Explorer Table Element Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    General Checkin Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sobject-checkin-history-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sobject Checkin History Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../note-sheet-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Note Sheet Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-edit-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task Edit Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-schedule-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task Schedule Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-status-history-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task Status History Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../work-hours-element-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Work Hours Element Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gantt-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gantt Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../work-element-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Work Element Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../simple-upload-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Simple Upload Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../thumb-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Thumb Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../view-panel-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    View Panel Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../custom-layout-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Layout Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../table-layout-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Table Layout Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../select-filter-element-widget/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Select Filter Element Widget
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../checkbox-filter-element-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Checkbox Filter Element Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-element-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task Element Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../link-element-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Link Element Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_20" >
+        
+          
+          <label class="md-nav__link" for="__nav_20" id="__nav_20_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Misc
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_20_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_20">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Misc
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stype-connect/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stype Connect
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Search
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../discussion-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Discussion Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hidden-row-toggle-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hidden Row Toggle Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../custom-url-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Url Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sobject-detail-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sobject Detail Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../built-in-plugins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Built In Plugins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../drop-element-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Drop Element Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../expression-value-element-wdg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Expression Value Element Wdg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../submit-support-ticket/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Submit Support Ticket
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="general-check-in-widget">General Check-in Widget</h1>
+<p><strong>General Check-in Widget</strong></p>
+<p><img alt="image" src="../media/checkin_widget_full.png" /></p>
+<p><strong>Description</strong></p>
+<p>This is the new preferred Check-in Widget for 3.7+. It makes use of the
+Java Applet to accomplish various kinds of check-in functions like
+checking in a single file, sequences of files, or directories. The
+<strong>copy</strong> or <strong>preallocate</strong> transfer mode should be used when dealing with a
+large file transfer. <strong>Upload</strong> transfer mode only supports checking in
+single files and sequences of files. <strong>Upload</strong> is set to be the default
+in case new users do not have the handoff directory readily set up.</p>
+<p><strong>Info</strong></p>
+<table>
+<colgroup>
+<col width="28%" />
+<col width="71%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><p><strong>Name</strong></p></td>
+<td><p>General Check-in Widget</p></td>
+</tr>
+<tr class="even">
+<td><p><strong>Class</strong></p></td>
+<td><p>tactic.ui.widget.CheckinWdg</p></td>
+</tr>
+<tr class="odd">
+<td><p><strong>Category</strong></p></td>
+<td><p>Widget</p></td>
+</tr>
+<tr class="even">
+<td><p><strong>Supported Interfaces</strong></p></td>
+<td><p>TableLayoutWdg</p></td>
+</tr>
+<tr class="odd">
+<td><p><strong>TACTIC Version Support</strong></p></td>
+<td><p>3.7.0<br />
+</p></td>
+</tr>
+<tr class="even">
+<td><p><strong>Required database columns</strong></p></td>
+<td><p>none</p></td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Options</strong></p>
+<table>
+<colgroup>
+<col width="28%" />
+<col width="71%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><p><strong>transfer_mode</strong></p></td>
+<td><p><strong>upload</strong>, <strong>copy</strong> and <strong>move</strong> are supported. <strong>copy</strong> is recommended for most situations when users are usually granted only read access to the TACTIC asset repo. <em>(default is copy)</em></p></td>
+</tr>
+<tr class="even">
+<td><p><strong>mode</strong></p></td>
+<td><p><strong>sequence</strong>, <strong>file</strong>, <strong>dir</strong>, and <strong>add</strong> are supported. <strong>sequence</strong> is for file sequence checkin; <strong>file</strong> is for single file checkin; <strong>dir</strong> is for directory checkin; and <strong>add</strong> is for appending file or dir to an existing snapshot. If not specified, multiple selections will be available for the user to choose. Note: upload transfer mode only supports single file or file sequence checkin.</p></td>
+</tr>
+<tr class="odd">
+<td><p><strong>checkin_script_path</strong></p></td>
+<td><p>a custom checkin script path to specify an override on what functions get called during a checkin. Note: If trying to do some preprocessing with the file or directory before checking in, just make use of validate_script_path function using Client Trigger. Client Trigger works by setting up this check-in script as a Client Trigger callback that affects the search type rather than just a column definition.</p></td>
+</tr>
+<tr class="even">
+<td><p><strong>validate_script_path</strong></p></td>
+<td><p>a script path pointing to a JavaScript file that is run before the actual checkin. If it throws an error using &quot;throw(&lt;error message&gt;)&quot;, the checkin will not initiate. This path can also use it to run some client-side preprocessing of the file or directory. It is not set up as a display option but rather as a Client Trigger callback.</p></td>
+</tr>
+<tr class="odd">
+<td><p><strong>checkout_script_path</strong></p></td>
+<td><p>a custom check-out script path to specify to override what happens during a check-out.</p></td>
+</tr>
+<tr class="even">
+<td><p><strong>process</strong></p></td>
+<td><p>If set, the process specified will be pre-selected when the General Check-in Widget is drawn,</p></td>
+</tr>
+<tr class="odd">
+<td><p><strong>lock_process</strong></p></td>
+<td><p>If set to true, the user will not be able to choose a different process during a checkin, in the General Check-in Widget</p></td>
+</tr>
+<tr class="even">
+<td><p><strong>show_context</strong></p></td>
+<td><p>When set to true, the <strong>context</strong> will be displayed to the user. <em>(default is false)</em></p></td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Gear Menu Options</strong></p>
+<p>The Gear Menu in the Check-in Widget provides the following
+administration options:</p>
+<p><img alt="image" src="../media/checkin-widget_gear-menu.png" /></p>
+<table>
+<colgroup>
+<col width="32%" />
+<col width="68%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><p><strong>Edit Process</strong></p></td>
+<td><p>Load the process options pop-up. <em>The process and subcontext options are described further in the sections below</em></p></td>
+</tr>
+<tr class="even">
+<td><p><strong>List Processes</strong></p></td>
+<td><p>List all of the processes for the current pipeline. This provides the same access to the as the Edit Process option but for all processes.</p></td>
+</tr>
+<tr class="odd">
+<td><p><strong>Show Server Transaction Log</strong></p></td>
+<td><p>Show the standard server transaction log</p></td>
+</tr>
+<tr class="even">
+<td><p><strong>Undo Last Server Transaction</strong></p></td>
+<td><p>Undo the last transaction. <em>When undoing a checkin, the files will also be removed in the file system.</em></p></td>
+</tr>
+<tr class="odd">
+<td><p><strong>Redo Last Server Transaction</strong></p></td>
+<td><p>Redo the last transaction. <em>When redoing a checkin, the files will be restored in the file system.</em></p></td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Implementation</strong></p>
+<p>The default settings will allow a user to check in files to an assets in
+the "publish" process. It provides a very general and loosely enforced
+workflow to check in and manage files. Often, it is required, that a
+particular process has very strict enforcement of naming conventions and
+check-in procedures.</p>
+<p>The General Check-in widget is highly configured and can be tuned
+precisely for each part of the process. The various customizations can
+fall into the following categories:</p>
+<p>Validation, Subcontext options, Custom interface, Custom check-in
+script, Naming conventions</p>
+<p>Each of these can be customized for the particular widget or at the
+process level.</p>
+<p><strong>Validation</strong></p>
+<p>Validation is a custom script that will is run before the check-in
+process occurs. It provides the ability to check that all files in the
+checkin conform to some custom logic required for a successful checkin.
+If the validation script fails, then the entire checkin is aborted.</p>
+<p><strong>Client Side Triggers</strong></p>
+<p>A client trigger set up allows control over what check-in script or
+validate_checkin script to call during a checkin. Here is an example of
+how to set the checkin/validate_folder script to run before the check in
+of prod/asset. The event name is
+CheckinWdg|validate_script_path|&lt;search_type&gt;. If only a particular
+process is desired to be run on check in for, like "texture", the event
+name would become CheckinWdg|validate_script_path|prod/asset|texture. To
+override the checkin_script_path, use the event
+CheckinWdg|checkin_script_path|&lt;search_type&gt;. If this event-based set-up
+seems a bit too involving, override the checkin_script_path for just
+this instance of the widget by using the standard display option
+&lt;checkin_script_path&gt;.</p>
+<p><strong>Process Options</strong></p>
+<p>By default, the subcontext selection is set to <strong>(auto)</strong>. It is the
+simplest to use and allows TACTIC to auto generate the subcontext.
+Because the subcontext is auto generated, strict naming conventions for
+the file are often sacrificed for ease of use. By default, the checked
+in file will just have a version number attached to it.</p>
+<p>It is possible to force a limited list of subcontext options on a
+particular checkin. This means that the files checked in will be named
+according to the subcontext selected and provides a limited set of
+approved containers in which files can be checked in.</p>
+<p><strong>Process/Context/Subcontext</strong></p>
+<p>Checkin’s are always categorized by process. If there is no pipeline
+defined, the default process "publish" will be used. Categorizing
+checkin’s by the process in the pipeline of an asset organizes the work
+done for an asset according to its product life cycle.</p>
+<p>Another important attribute of a checkin is the context. Assets are
+versioned according to their context which provide a namespace for
+versioning checkin’s of an asset. All checkin’s of an asset with the
+same context are versioned together. The context of an asset is a
+particular way to view an asset.</p>
+<p>For example, a 2D drawing of a character and a 3D model of the same
+character represent the same abstract asset, so are two different
+contents of the asset. This can be implemented in TACTIC by specifying
+the following in the Check-in Widget’s Context Options:</p>
+<div class="codehilite"><pre><span></span><code> Context Options: 2D_drawing|3D_model
+</code></pre></div>
+
+<p><img alt="image" src="../media/checkin-widget_context_dropdown.png" /></p>
+<p>Although the context can be any string, most often, it is built up from
+other parameters. The convention usually used is
+"&lt;process&gt;/&lt;subcontext&gt;". All of TACTIC’s built-in check-in tools assume
+this relationship. The subcontext provides a namespace for checking in
+multiple subcategories of files within a single context.</p>
+<p>The following is an example of these subcontext options:</p>
+<div class="codehilite"><pre><span></span><code>Subcontext Options: hi|med|low
+</code></pre></div>
+
+<p><img alt="image" src="../media/checkin-widget_subcontext_dropdown.png" /></p>
+<p>Naming conventions are often strictly enforced, meaning that the folder
+and the file name are automatically supplied on check in of a file to
+the central repository.</p>
+<p><strong>Default Check-in Widget Options</strong></p>
+<p>In the panel on the right, when something from the list is selected for
+check in, the corresponding Check-in type (e.g.. <strong>file</strong>, <strong>directory</strong>,
+<strong>sequence</strong>, <strong>multiple individual files</strong>) is automatically selected by
+the Check-in Widget.</p>
+<p>For example, on the panel on the right, if a <em>file</em> is selected for
+check in, the Check-in type will automatically switch to <strong>A File</strong> under
+the Check-in Options on the bottom left:</p>
+<p><img alt="image" src="../media/checkin-widget_file_selection.png" /></p>
+<p>For example, if a <em>folder</em> is selected to check in on the right panel,
+the Check-in type will automatically switch to <strong>A Directory</strong> under the
+Check-in Options on the bottom left:</p>
+<p><img alt="image" src="../media/checkin-widget_folder_selection.png" /></p>
+<p><strong>More Context and Subcontext Examples</strong></p>
+<p><strong>Example 1)</strong></p>
+<p>To check in <em>high resolution</em> and <em>low resolution</em> files for a model
+process, first specify the <strong>context_options</strong> under:</p>
+<p><strong>Checkin Widget → Gear Menu → Edit Process:</strong></p>
+<p><img alt="image" src="../media/checkin-widget_edit_processes.png" /></p>
+<p>Specify the following Context Options:</p>
+<div class="codehilite"><pre><span></span><code>Context Options: model/hi|model/lo
+</code></pre></div>
+
+<p><strong>OR</strong> specify the following Subcontext Options:</p>
+<div class="codehilite"><pre><span></span><code>Subcontext Options: hi|lo
+</code></pre></div>
+
+<p>Both of the choices above give the <em>same</em> result.</p>
+<p>Result:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">proc</span><span class="nv">ess</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">model</span>
+<span class="nf">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">model</span><span class="o">/</span><span class="nv">hi</span><span class="w">   </span><span class="p">(</span><span class="nv">or</span><span class="w"> </span><span class="nv">model</span><span class="o">/</span><span class="nv">lo</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Only use either the context field or the subcontext field but not both
+fields.</p>
+<blockquote>
+<p><strong>Note</strong></p>
+<p>If values are specified for <em>both</em> the <strong>context_options</strong> and the
+<strong>subcontext_options</strong>, only the <strong>context_options</strong> will be used (the
+<strong>subcontext_options</strong> will be ignored).</p>
+</blockquote>
+<p><strong>Example 2)</strong></p>
+<p>To provide the same options (hi and lo) and avoid using subcontexts
+specify the following <strong>context_options</strong>:</p>
+<div class="codehilite"><pre><span></span><code>context_options: model_hi|model_lo
+</code></pre></div>
+
+<p>Result:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">proc</span><span class="nv">ess</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">model</span>
+<span class="nf">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">model_hi</span><span class="w">    </span><span class="p">(</span><span class="nv">or</span><span class="w"> </span><span class="nv">model_lo</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Notice that the forward slash '/' was not used, which avoids using
+subcontexts.</p>
+<p><strong>Example 3)</strong></p>
+<p>The following is another example of how to avoiding using subcontexts
+altogether.</p>
+<p>To check in a <em>proxy</em> and a <em>staging</em> context for a model process,
+specify the following <strong>context_options</strong>:</p>
+<div class="codehilite"><pre><span></span><code>context_options: model_proxy|model_staging
+</code></pre></div>
+
+<p>Result:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">proc</span><span class="nv">ess</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">model</span>
+<span class="nf">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">model_proxy</span><span class="w">    </span><span class="p">(</span><span class="nv">or</span><span class="w"> </span><span class="nv">model_staging</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Again, notice that the forward slash '/' was not used, which avoids
+using subcontexts.</p>
+<p><strong>Subcontext Keywords: (auto), (main) and (text)</strong></p>
+<p>The following subcontext option keywords are supported:</p>
+<table>
+<colgroup>
+<col width="30%" />
+<col width="69%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><p><strong>(auto)</strong></p></td>
+<td><p>Uses the filename as the subcontext <em>(<strong>auto</strong> is the default if no values are specified for the context or subcontext options)</em></p></td>
+</tr>
+<tr class="even">
+<td><p><strong>(main)</strong></p></td>
+<td><p>Uses the process as the context</p></td>
+</tr>
+<tr class="odd">
+<td><p><strong>(text)</strong></p></td>
+<td><p>Allows the user to specify their own context for the file to check in</p></td>
+</tr>
+</tbody>
+</table>
+
+<p>Example for <strong>(auto)</strong>:</p>
+<table>
+<colgroup>
+<col width="28%" />
+<col width="71%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><p><strong>process:</strong></p></td>
+<td><p>design</p></td>
+</tr>
+<tr class="even">
+<td><p><strong>filename:</strong></p></td>
+<td><p>my_checkin_file.txt</p></td>
+</tr>
+<tr class="odd">
+<td><p><strong>subcontext option selected:</strong></p></td>
+<td><p>(auto)</p></td>
+</tr>
+</tbody>
+</table>
+
+<p>Result:</p>
+<div class="codehilite"><pre><span></span><code>context = design/my_checkin_file.txt
+</code></pre></div>
+
+<p>Example for <strong>(main)</strong>:</p>
+<table>
+<colgroup>
+<col width="28%" />
+<col width="71%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><p><strong>process:</strong></p></td>
+<td><p>design</p></td>
+</tr>
+<tr class="even">
+<td><p><strong>subcontext option selected:</strong></p></td>
+<td><p>(main)</p></td>
+</tr>
+</tbody>
+</table>
+
+<p>Result:</p>
+<div class="codehilite"><pre><span></span><code>context = design (because  is the process)
+</code></pre></div>
+
+<p>Example for*(text)*:</p>
+<p>To check in different colors of a car for the design process eg. a green
+version of the car and a red version</p>
+<table>
+<colgroup>
+<col width="28%" />
+<col width="71%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><p><strong>process:</strong></p></td>
+<td><p>design</p></td>
+</tr>
+<tr class="even">
+<td><p><strong>subcontext option selected:</strong></p></td>
+<td><p>(text)</p></td>
+</tr>
+<tr class="odd">
+<td><p><strong>custom context inputted</strong></p></td>
+<td><p>green</p></td>
+</tr>
+</tbody>
+</table>
+
+<p>Result:</p>
+<div class="codehilite"><pre><span></span><code>context = design/blue
+</code></pre></div>
+
+<p><img alt="image" src="../media/checkin-widget_text.png" /></p>
+<p><strong>Providing a Custom Layout View For the Check-in Options</strong></p>
+<p>A custom layout view can be provided in the check-in panel as options.</p>
+<p>For example, to provide check boxes during the check in to submit the
+job to the render farm or to submit the file for the review process,
+create a custom view and specify the view in the <strong>Check Options View</strong>.</p>
+<p>To do this, first, create a custom view under:</p>
+<p><strong>Admin Views → Project → Widget Config</strong></p>
+<p>Below is an example of a custom layout view:</p>
+<p><img alt="image" src="../media/checkin-widget_widget_config.png" /></p>
+<p>note:</p>
+<p><em>In the example custom view above, to make use of these custom UI check
+boxes, more work needs to be done to override the checkin_script or
+checkin_validate_script.</em></p>
+<p><em>The checkin_script and the checkin_validate script can be found under:
+Checkin Widget → Gear Menu → List Processes</em></p>
+<p><em>Example validate scripts can be found at the end of this Check-in
+Widget doc in the section labeled Example Scripts: Example 1 and 2.</em></p>
+<p>Then, specify the name of the view under:</p>
+<p><strong>Checkin Widget → Gear Menu → List Processes</strong></p>
+<p><img alt="image" src="../media/checkin-widget_gear_menu_list_processes.png" /></p>
+<p>In the Check-in Options View, specify the name of the custom layout view
+for the check-in options:</p>
+<p><img alt="image" src="../media/checkin-widget_checkin_options_view.png" /></p>
+<p>Finally, select a file to check in, the custom view with the check-in
+options will appear on the panel on the left.</p>
+<table>
+<colgroup>
+<col width="36%" />
+<col width="63%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Without custom check-in options:</strong></th>
+<th><strong>With customer check-in options:</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p><img src="media/checkin-widget_custom_layout_before.png" alt="image" /></p></td>
+<td><p><img src="media/checkin-widget_custom_layout.png" alt="image" /></p></td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Script Samples</strong></p>
+<p>This script can be saved in the Script Editor accessible through the
+Gear Menu.</p>
+<p>Example 1: checkin/validate_folder</p>
+<div class="codehilite"><pre><span></span><code><span class="nf">var</span><span class="w"> </span><span class="k">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bvr</span><span class="p">.</span><span class="k">values</span><span class="p">;</span>
+<span class="nf">var</span><span class="w"> </span><span class="n">file_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">values</span><span class="p">.</span><span class="n">file_paths</span><span class="o">[</span><span class="n">0</span><span class="o">]</span><span class="p">;</span>
+<span class="nf">var</span><span class="w"> </span><span class="n">sk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">values</span><span class="p">.</span><span class="n">search_key</span><span class="p">;</span>
+<span class="nf">var</span><span class="w"> </span><span class="n">applet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">spt</span><span class="p">.</span><span class="n">Applet</span><span class="p">.</span><span class="k">get</span><span class="p">();</span>
+
+<span class="nf">var</span><span class="w"> </span><span class="n">file_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">applet</span><span class="p">.</span><span class="n">list_dir</span><span class="p">(</span><span class="n">file_path</span><span class="p">);</span>
+
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="nf">var</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="n">file_list</span><span class="p">.</span><span class="n">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="err">{</span>
+
+<span class="w">    </span><span class="nf">var</span><span class="w"> </span><span class="n">base</span><span class="w"> </span><span class="o">=</span><span class="n">spt</span><span class="p">.</span><span class="k">path</span><span class="p">.</span><span class="n">get_basename</span><span class="p">(</span><span class="n">file_list</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">base</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">'DATA'</span><span class="p">)</span><span class="w"> </span><span class="err">{</span>
+<span class="w">         </span><span class="k">throw</span><span class="p">(</span><span class="s1">'it contains a DATA folder. Checkin aborted'</span><span class="p">);</span>
+
+<span class="w">    </span><span class="err">}</span>
+<span class="err">}</span>
+</code></pre></div>
+
+<p>Example 2: checkin/validate_file</p>
+<div class="codehilite"><pre><span></span><code><span class="k">var</span><span class="w"> </span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bvr</span><span class="o">.</span><span class="n">values</span><span class="p">;</span>
+<span class="k">var</span><span class="w"> </span><span class="n">file_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">values</span><span class="o">.</span><span class="n">file_paths</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="k">var</span><span class="w"> </span><span class="n">sk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">values</span><span class="o">.</span><span class="n">search_key</span><span class="p">;</span>
+<span class="k">var</span><span class="w"> </span><span class="n">applet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">spt</span><span class="o">.</span><span class="n">Applet</span><span class="o">.</span><span class="n">get</span><span class="p">();</span>
+
+<span class="k">var</span><span class="w"> </span><span class="n">base</span><span class="w"> </span><span class="o">=</span><span class="n">spt</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">get_basename</span><span class="p">(</span><span class="n">file_path</span><span class="p">);</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">base</span><span class="o">.</span><span class="n">test</span><span class="p">(</span><span class="o">/</span>\\<span class="o">.</span><span class="n">mov</span><span class="o">$/</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="n">throw</span><span class="p">(</span><span class="s1">'it does not have a mov extension. Validation failed.'</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Example 3: Custom checkin_script using display option
+"checkin_script_path". Also retrieving and showing the values of
+checkboxes. The default snapshot_type is file, if the file extension is
+.mov, the snapshot_type is set to 'mov'.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">file_paths</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">bvr</span><span class="p">.</span><span class="nx">values</span><span class="p">.</span><span class="nx">file_paths</span><span class="p">;</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">description</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">bvr</span><span class="p">.</span><span class="nx">values</span><span class="p">.</span><span class="nx">description</span><span class="p">;</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">search_key</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">bvr</span><span class="p">.</span><span class="nx">values</span><span class="p">.</span><span class="nx">search_key</span><span class="p">;</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">context</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">bvr</span><span class="p">.</span><span class="nx">values</span><span class="p">.</span><span class="nx">context</span><span class="p">;</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">transfer_mode</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">bvr</span><span class="p">.</span><span class="nx">values</span><span class="p">.</span><span class="nx">transfer_mode</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">is_current</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">bvr</span><span class="p">.</span><span class="nx">values</span><span class="p">.</span><span class="nx">is_current</span><span class="p">;</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">path</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">file_paths</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nx">spt</span><span class="p">.</span><span class="nx">app_busy</span><span class="p">.</span><span class="nx">show</span><span class="p">(</span><span class="s">"File Checkin"</span><span class="p">,</span><span class="w"> </span><span class="nx">path</span><span class="p">);</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">values_dic</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">bvr</span><span class="p">.</span><span class="nx">custom_options</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value_dic</span><span class="p">);</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">snapshot_type</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="err">'</span><span class="nx">file</span><span class="err">'</span><span class="p">;</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">path</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="o">/</span><span class="err">\\</span><span class="p">.</span><span class="nx">mov</span><span class="err">$</span><span class="o">/</span><span class="p">)){</span>
+<span class="w">    </span><span class="nx">snapshot_type</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="err">'</span><span class="nx">mov</span><span class="err">'</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">server</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">TacticServerStub</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
+<span class="nx">snapshot</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">server</span><span class="p">.</span><span class="nx">simple_checkin</span><span class="p">(</span><span class="nx">search_key</span><span class="p">,</span><span class="w"> </span><span class="nx">context</span><span class="p">,</span><span class="w"> </span><span class="nx">path</span><span class="p">,</span>
+<span class="p">{</span><span class="nx">description</span><span class="p">:</span><span class="w"> </span><span class="nx">description</span><span class="p">,</span><span class="w"> </span><span class="nx">mode</span><span class="p">:</span><span class="w"> </span><span class="nx">transfer_mode</span><span class="p">,</span><span class="w"> </span><span class="nx">is_current</span><span class="p">:</span><span class="w"> </span><span class="nx">is_current</span><span class="p">,</span>
+<span class="w"> </span><span class="nx">snapshot_type</span><span class="p">:</span><span class="err">'</span><span class="nx">mov</span><span class="err">'</span><span class="p">});</span>
+</code></pre></div>
+
+<p><strong>Advanced</strong></p>
+<p>The General Check-in Widget is usually invoked with a
+CheckinButtonElementWdg with a transfer mode specified. In this
+implementation, the process will be preselected as "texture", providing
+the pipeline for this sObject does contain a process named 'texture'.</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">&lt;element</span><span class="w"> </span><span class="na">name=</span><span class="s">'general_checkin'</span><span class="w"> </span><span class="na">title=</span><span class="s">' '</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;display</span><span class="w"> </span><span class="na">class=</span><span class="s">'tactic.ui.widget.CheckinButtonElementWdg'</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;transfer_mode&gt;</span>copy<span class="nt">&lt;/transfer_mode&gt;</span>
+<span class="w">    </span><span class="nt">&lt;process&gt;</span>texture<span class="nt">&lt;/process&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/display&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/element&gt;</span>
+</code></pre></div>
+
+<p>In this implementation, the process will be preselected as "model",
+providing the pipeline for this sObject does contain a process named
+'model'. The user cannot switch to other processes in the pipeline, and
+only "New Directory" mode can be selected.</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">&lt;element</span><span class="w"> </span><span class="na">name=</span><span class="s">'general_checkin'</span><span class="w"> </span><span class="na">title=</span><span class="s">' '</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;display</span><span class="w"> </span><span class="na">class=</span><span class="s">'tactic.ui.widget.CheckinButtonElementWdg'</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;transfer_mode&gt;</span>copy<span class="nt">&lt;/transfer_mode&gt;</span>
+<span class="w">    </span><span class="nt">&lt;process&gt;</span>model<span class="nt">&lt;/process&gt;</span>
+<span class="w">     </span><span class="nt">&lt;lock_process&gt;</span>true<span class="nt">&lt;/lock_process&gt;</span>
+<span class="w">    </span><span class="nt">&lt;mode&gt;</span>dir<span class="nt">&lt;/mode&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/display&gt;</span>
+<span class="nt">&lt;/element&gt;</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/squidfunk" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M202.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M496 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/squidfunk" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M459.4 151.7c.3 4.5.3 9.1.3 13.6 0 138.7-105.6 298.6-298.6 298.6-59.5 0-114.7-17.2-161.1-47.1 8.4 1 16.6 1.3 25.3 1.3 49.1 0 94.2-16.6 130.3-44.8-46.1-1-84.8-31.2-98.1-72.8 6.5 1 13 1.6 19.8 1.6 9.4 0 18.8-1.3 27.6-3.6-48.1-9.7-84.1-52-84.1-103v-1.3c14 7.8 30.2 12.7 47.4 13.3-28.3-18.8-46.8-51-46.8-87.4 0-19.5 5.2-37.4 14.3-53C87.4 130.8 165 172.4 252.1 176.9c-1.6-7.8-2.6-15.9-2.6-24C249.5 95.1 296.3 48 354.4 48c30.2 0 57.5 12.7 76.7 33.1 23.7-4.5 46.5-13.3 66.6-25.3-7.8 24.4-24.4 44.8-46.1 57.8 21.1-2.3 41.6-8.1 60.4-16.2-14.3 20.8-32.2 39.3-52.6 54.3"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://linkedin.com/in/squidfunk" target="_blank" rel="noopener" title="linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": "-tabs", "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

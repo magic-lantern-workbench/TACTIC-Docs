@@ -1,4 +1,5 @@
 site_name: TACTIC Setup Docs
+site_url: https://magic-lantern-workbench.github.io/TACTIC-Docs/setup/
 nav:
     - Introduction: './index.md'
     - Create Projects:
