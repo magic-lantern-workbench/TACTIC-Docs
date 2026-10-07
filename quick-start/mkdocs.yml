@@ -15,6 +15,7 @@ theme:
     code: Roboto Mono
 
 nav:
+  - Home: 'https://magic-lantern-workbench.github.io/TACTIC-Docs/'
   - Introduction: 'index.md'
   - Get TACTIC: 'get_tactic.md'
   - Setup TACTIC: 'setup.md'

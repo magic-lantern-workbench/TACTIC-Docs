@@ -2,6 +2,7 @@ site_name: TACTIC System Administration
 site_url: https://magic-lantern-workbench.github.io/TACTIC-Docs/sys-admin/
 
 nav:
+    - Home: 'https://magic-lantern-workbench.github.io/TACTIC-Docs/'
     - 'Introduction': 'index.md'
     - Planning:
         - 'TACTIC as a Scalable Solution': 'deploy-tactic-scalability-solution.md'

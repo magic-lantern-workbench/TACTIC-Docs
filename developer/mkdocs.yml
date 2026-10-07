@@ -2,6 +2,7 @@ site_name: TACTIC Developer Docs
 site_url: https://magic-lantern-workbench.github.io/TACTIC-Docs/developer/
 
 nav:
+    - Home: 'https://magic-lantern-workbench.github.io/TACTIC-Docs/'
     - Introduction: './index.md'
     - Developer Start-up:
         - 'Development Concepts': './development-concepts.md'

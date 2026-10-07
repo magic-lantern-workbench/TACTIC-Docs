@@ -39,6 +39,6 @@ To get started with using TACTIC, building workflows and defining automation, re
 
 ## TACTIC Forum
 
-A great additional resources for problems that others have encountered, search through the [TACTIC Forum](http://forum.southpawtech.com).  If you cannot find what you need, feel free to register and post any questions or issues you may have.
+A great additional resources for problems that others have encountered, search through the [TACTIC Forum](https://github.com/magic-lantern-workbench/TACTIC-Docs/discussions).  If you cannot find what you need, feel free to register and post any questions or issues you may have.
 
 
