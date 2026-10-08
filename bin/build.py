@@ -21,6 +21,11 @@ for book in books:
     print("copy css to [%s]" % css)
     shutil.copy(orig_css, css)
 
+    # copy javascript
+    js = os.path.join(path, "docs/js")
+    os.makedirs(js, exist_ok=True)
+    shutil.copy(os.path.join(root, "common/extra.js"), js)
+
     # clear any previous build of this book
     if os.path.exists(dest):
         shutil.rmtree(dest)

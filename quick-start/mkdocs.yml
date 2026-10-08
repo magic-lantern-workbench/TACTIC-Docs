@@ -43,3 +43,6 @@ extra:
     - icon: fontawesome/brands/linkedin
       link: https://linkedin.com/in/squidfunk
  
+
+extra_javascript:
+    - js/extra.js

@@ -147,3 +147,6 @@ extra:
 #    - mkpdfs
 
 
+
+extra_javascript:
+    - js/extra.js
