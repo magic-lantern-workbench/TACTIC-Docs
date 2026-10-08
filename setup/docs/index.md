@@ -1,6 +1,6 @@
 # Setup Introduction
 
-These documents describe how to configure and maintain the structure of the TACTIC projects, which begins after successful installation.  For documentation on TACTIC installation, please refer to the [System Adminstration](/docs/sys-admin) docs.
+These documents describe how to configure and maintain the structure of the TACTIC projects, which begins after successful installation.  For documentation on TACTIC installation, please refer to the [System Adminstration](../sys-admin/) docs.
 
 Setting up TACTIC projects can include the following:
 

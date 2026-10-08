@@ -34,7 +34,7 @@ Refer to the following sections for maintenance,
 - [Troubleshooting](troubleshooting-tactic.md)
 - [Maintenance](backup-and-restore-server.md)
 
-To get started with using TACTIC, building workflows and defining automation, read the [Quick-Start](/docs/quick-start) documentation.
+To get started with using TACTIC, building workflows and defining automation, read the [Quick-Start](../quick-start/) documentation.
 
 
 ## TACTIC Forum

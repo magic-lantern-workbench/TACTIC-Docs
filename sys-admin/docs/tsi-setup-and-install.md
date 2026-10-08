@@ -96,7 +96,7 @@ Download the VM from the community site <a href="http://community.southpawtech.c
     ![Login](media/quick-start-fresh-login.PNG)
 
 
-8. Continue your TACTIC exploration using the [Quick Start documentation](http://community.southpawtech.com/docs/quick-start).
+8. Continue your TACTIC exploration using the [Quick Start documentation](../quick-start/).
 
 
 ## Login Info
